@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maquette1", "Maquette1\Maquette1\Maquette1.csproj", "{DEE79D33-CFDE-4D0B-8287-9EA126991144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maquette1Content", "Maquette1\Maquette1Content\Maquette1Content.contentproj", "{D47B3A82-85CA-47C3-AA03-7991468B2DC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUILibrary", "GUILibrary\GUILibrary.csproj", "{C657C128-F98F-4CE5-BB4A-6973AE7412FD}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs26
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GUILibrary\\GUILibrary.csproj
+		SccProjectName1 = GUILibrary
+		SccLocalPath1 = GUILibrary
+		SccProjectUniqueName2 = Maquette1\\Maquette1\\Maquette1.csproj
+		SccProjectName2 = Maquette1/Maquette1
+		SccLocalPath2 = Maquette1\\Maquette1
+		SccProjectUniqueName3 = Maquette1\\Maquette1Content\\Maquette1Content.contentproj
+		SccProjectName3 = Maquette1/Maquette1Content
+		SccLocalPath3 = Maquette1\\Maquette1Content
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEE79D33-CFDE-4D0B-8287-9EA126991144}.Debug|x86.ActiveCfg = Debug|x86
+		{DEE79D33-CFDE-4D0B-8287-9EA126991144}.Debug|x86.Build.0 = Debug|x86
+		{DEE79D33-CFDE-4D0B-8287-9EA126991144}.Release|x86.ActiveCfg = Release|x86
+		{DEE79D33-CFDE-4D0B-8287-9EA126991144}.Release|x86.Build.0 = Release|x86
+		{D47B3A82-85CA-47C3-AA03-7991468B2DC2}.Debug|x86.ActiveCfg = Debug|x86
+		{D47B3A82-85CA-47C3-AA03-7991468B2DC2}.Release|x86.ActiveCfg = Release|x86
+		{C657C128-F98F-4CE5-BB4A-6973AE7412FD}.Debug|x86.ActiveCfg = Debug|x86
+		{C657C128-F98F-4CE5-BB4A-6973AE7412FD}.Debug|x86.Build.0 = Debug|x86
+		{C657C128-F98F-4CE5-BB4A-6973AE7412FD}.Release|x86.ActiveCfg = Release|x86
+		{C657C128-F98F-4CE5-BB4A-6973AE7412FD}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
