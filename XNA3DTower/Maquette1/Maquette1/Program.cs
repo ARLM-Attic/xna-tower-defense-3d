@@ -9,7 +9,7 @@ namespace Maquette1
         /// </summary>
         static void Main(string[] args)
         {
-            using (GameWindow game = new GameWindow())
+            using (GameMain game = new GameMain())
             {
                 game.Run();
             }

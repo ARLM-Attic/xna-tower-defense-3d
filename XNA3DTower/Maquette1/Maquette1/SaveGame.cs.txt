@@ -1,4 +1,4 @@
-using GlobalsComponent;
+﻿using GlobalsComponent;
 using GUILibrary;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -125,7 +125,7 @@ namespace Maquette1
             vp_minimap.Width = vp_minimap.Height; // 1:4
             vp_panneauStatut.Width = vp_defaultViewPort.Width - vp_minimap.Width; // 3:4
 
-            //Coordin� des vp
+            //Coordiné des vp
             //vp_game est en 0,0 (coo du defaultVP)
             vp_minimap.Y = vp_viewGame.Height;
             vp_panneauStatut.X = vp_minimap.Width;

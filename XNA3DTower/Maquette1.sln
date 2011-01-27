@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUILibrary", "GUILibrary\GU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalsComponent", "GlobalsComponent\GlobalsComponent.csproj", "{247ABECE-791A-4C42-A5DD-FE4EF884DB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenManager", "ScreenManager\ScreenManager.csproj", "{EBB0B611-C6A4-40BB-BE1C-1E69720917ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenManager", "WindowsGameLibrary1\ScreenManager.csproj", "{43F2A224-227C-4FD2-AEB3-280B8F696502}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -29,9 +29,9 @@ Global
 		SccProjectUniqueName4 = GlobalsComponent\\GlobalsComponent.csproj
 		SccProjectName4 = GlobalsComponent
 		SccLocalPath4 = GlobalsComponent
-		SccProjectUniqueName5 = ScreenManager\\ScreenManager.csproj
-		SccProjectName5 = ScreenManager
-		SccLocalPath5 = ScreenManager
+		SccProjectUniqueName5 = WindowsGameLibrary1\\ScreenManager.csproj
+		SccProjectName5 = WindowsGameLibrary1
+		SccLocalPath5 = WindowsGameLibrary1
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -52,10 +52,10 @@ Global
 		{247ABECE-791A-4C42-A5DD-FE4EF884DB30}.Debug|x86.Build.0 = Debug|x86
 		{247ABECE-791A-4C42-A5DD-FE4EF884DB30}.Release|x86.ActiveCfg = Release|x86
 		{247ABECE-791A-4C42-A5DD-FE4EF884DB30}.Release|x86.Build.0 = Release|x86
-		{EBB0B611-C6A4-40BB-BE1C-1E69720917ED}.Debug|x86.ActiveCfg = Debug|x86
-		{EBB0B611-C6A4-40BB-BE1C-1E69720917ED}.Debug|x86.Build.0 = Debug|x86
-		{EBB0B611-C6A4-40BB-BE1C-1E69720917ED}.Release|x86.ActiveCfg = Release|x86
-		{EBB0B611-C6A4-40BB-BE1C-1E69720917ED}.Release|x86.Build.0 = Release|x86
+		{43F2A224-227C-4FD2-AEB3-280B8F696502}.Debug|x86.ActiveCfg = Debug|x86
+		{43F2A224-227C-4FD2-AEB3-280B8F696502}.Debug|x86.Build.0 = Debug|x86
+		{43F2A224-227C-4FD2-AEB3-280B8F696502}.Release|x86.ActiveCfg = Release|x86
+		{43F2A224-227C-4FD2-AEB3-280B8F696502}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
