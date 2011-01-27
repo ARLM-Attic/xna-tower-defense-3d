@@ -1,3 +1,4 @@
+using GlobalsComponent;
 using GUILibrary;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,10 +9,9 @@ namespace Maquette1
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game_main : Microsoft.Xna.Framework.Game
+    public class GameWindow : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
 
         //ViewPort
         Viewport vp_defaultViewPort;
@@ -53,7 +53,7 @@ namespace Maquette1
             set { bb = value; }
         }
 
-        public Game_main()
+        public GameWindow()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -98,8 +98,8 @@ namespace Maquette1
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            // Create a new GlobalsGameRessources.SPRITEBATCH, which can be used to draw textures.
+            GlobalsGameRessources.SPRITEBATCH = new SpriteBatch(GraphicsDevice);
 
             //Viewports
             vp_defaultViewPort = GraphicsDevice.Viewport;
@@ -149,10 +149,8 @@ namespace Maquette1
                 MathHelper.PiOver4, 1.0F, 1.0f, 10000f);
 
             SpriteFont font = Content.Load<SpriteFont>("myfont");
-            Bb.Use(spriteBatch, tx_minimap, "Over", font, vp_panneauTour, 10, 10);
-            Menu.Use(spriteBatch, vp_panneauTour, 50, 50);
-            vp_panneauTour.X = 0;
-            vp_panneauTour.Y = 0;
+            Bb.Use(GlobalsGameRessources.SPRITEBATCH, tx_minimap, "Over", font, vp_panneauTour, 10, 10);
+            Menu.Use(GlobalsGameRessources.SPRITEBATCH, vp_panneauTour, 50, 50);
             Menu.pseudoLoad();
             Menu.add(Bb);
         }
@@ -198,19 +196,19 @@ namespace Maquette1
             //Changement de vp
             GraphicsDevice.Viewport = vp_panneauStatut;
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(tx_panneauStatut, new Rectangle(0, 0, vp_panneauStatut.Width, vp_panneauStatut.Height), Color.White);
-            spriteBatch.End();
+            GlobalsGameRessources.SPRITEBATCH.Begin();
+            GlobalsGameRessources.SPRITEBATCH.Draw(tx_panneauStatut, new Rectangle(0, 0, vp_panneauStatut.Width, vp_panneauStatut.Height), Color.White);
+            GlobalsGameRessources.SPRITEBATCH.End();
 
             GraphicsDevice.Viewport = vp_panneauTour;
-            spriteBatch.Begin();
-            spriteBatch.Draw(tx_panneauTour, new Rectangle(0, 0, vp_panneauTour.Width, vp_panneauTour.Height), Color.White);
-            spriteBatch.End();
+            GlobalsGameRessources.SPRITEBATCH.Begin();
+            GlobalsGameRessources.SPRITEBATCH.Draw(tx_panneauTour, new Rectangle(0, 0, vp_panneauTour.Width, vp_panneauTour.Height), Color.White);
+            GlobalsGameRessources.SPRITEBATCH.End();
 
             GraphicsDevice.Viewport = vp_minimap;
-            spriteBatch.Begin();
-            spriteBatch.Draw(tx_minimap, new Rectangle(0, 0, vp_minimap.Width, vp_minimap.Height), Color.White);
-            spriteBatch.End();
+            GlobalsGameRessources.SPRITEBATCH.Begin();
+            GlobalsGameRessources.SPRITEBATCH.Draw(tx_minimap, new Rectangle(0, 0, vp_minimap.Width, vp_minimap.Height), Color.White);
+            GlobalsGameRessources.SPRITEBATCH.End();
 
             GraphicsDevice.Viewport = vp_viewGame;
             // Copy any parent transforms.

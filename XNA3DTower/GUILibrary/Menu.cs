@@ -54,7 +54,7 @@ namespace GUILibrary
             // TODO: Construct any child components here
         }
 
-        unsafe public void Use(SpriteBatch sb, Viewport vp, int x, int y)
+        public void Use(SpriteBatch sb, Viewport vp, int x, int y)
         {
             SpriteBatch = sb;
             Vp = vp;
@@ -162,7 +162,7 @@ namespace GUILibrary
                 //SpriteBatch.Draw(White, new Rectangle(0, 0, 100, 100), Color.Black);//Position dans le VP
                 SpriteBatch.End();
             }
-            SpriteBatch.Begin();
+            spriteBatch.Begin();
             SpriteBatch.DrawString(boutons[0].Font, texte, new Vector2(100, 100), Color.OrangeRed);
             SpriteBatch.End();
             base.Draw(gameTime);
