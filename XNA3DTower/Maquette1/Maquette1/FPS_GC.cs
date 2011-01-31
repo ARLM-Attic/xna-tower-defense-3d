@@ -29,7 +29,7 @@ namespace Maquette1
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            this.spriteBatch = new SpriteBatch(this.Game.GraphicsDevice);
+            spriteBatch = new SpriteBatch(Game.GraphicsDevice);
 
             base.Initialize();
         }
@@ -41,27 +41,26 @@ namespace Maquette1
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-
+            fps = 1000.0d / gameTime.ElapsedGameTime.TotalMilliseconds;
             base.Update(gameTime);
         }
 
         protected override void LoadContent()
         {
-            this.spriteFont = this.Game.Content.Load<SpriteFont>("myfont");
+            spriteFont = Game.Content.Load<SpriteFont>("myfont");
             base.LoadContent();
         }
 
         public override void Draw(GameTime gameTime)
         {
-            this.fps = 1000.0d / gameTime.ElapsedGameTime.TotalMilliseconds;
             //Formatage de la chaine
-            string texte = string.Format("{0:00.00} images / sec", this.fps);
+            string texte = string.Format("{0:00.00} images / sec ", fps);
             //Calcul de la taille de la chaine pour la police de caractère choisie
-            Vector2 taille = this.spriteFont.MeasureString(texte);
+            Vector2 taille = spriteFont.MeasureString(texte);
             //Affichage de la chaine
-            this.spriteBatch.Begin();
-            this.spriteBatch.DrawString(this.spriteFont, texte, new Vector2(this.GraphicsDevice.Viewport.Width - taille.X, 5), Color.Green);
-            this.spriteBatch.End();
+            spriteBatch.Begin();
+            spriteBatch.DrawString(spriteFont, texte, new Vector2(GraphicsDevice.Viewport.Width - taille.X, 5), Color.Green);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

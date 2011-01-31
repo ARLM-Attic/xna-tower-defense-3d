@@ -31,12 +31,12 @@ namespace Maquette1
             //
 
             IsMouseVisible = true;
-
+            GLOBALS_GAME_RESSOURCES.Initialize();
             //Initialisation des parametre de la fenetre
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferHeight = 1280;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferWidth = 1024;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferFormat = SurfaceFormat.Rg32;
-            GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
+            //GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
             GLOBALS_GAME_RESSOURCES.GRAPHICS.ApplyChanges();
 
             base.Initialize();
@@ -48,6 +48,9 @@ namespace Maquette1
         /// </summary>
         protected override void LoadContent()
         {
+            GLOBALS_GAME_RESSOURCES.Images[0] = Content.Load<Texture2D>("Images/Shiki1.jpg");
+            GLOBALS_GAME_RESSOURCES.Images[1] = Content.Load<Texture2D>("Images/Shiki2.jpg");
+            GLOBALS_GAME_RESSOURCES.Images[2] = Content.Load<Texture2D>("Images/Shiki3.png");
         }
 
         /// <summary>

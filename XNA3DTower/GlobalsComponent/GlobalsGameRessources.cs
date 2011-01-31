@@ -58,6 +58,10 @@ namespace GlobalsComponent
             VP_panneauStatut.X = VP_minimap.Width;
             VP_panneauStatut.Y = VP_viewGame.Height;
             VP_panneauTour.X = VP_viewGame.Width;
+
+            Images = new Texture2D[3];
         }
+
+        public static Texture2D[] Images { get; set; }
     }
 }
