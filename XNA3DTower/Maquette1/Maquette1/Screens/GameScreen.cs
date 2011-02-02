@@ -44,17 +44,26 @@ namespace Maquette1.MainFiles
             //GraphicsDevice.Viewport = vp_panneauStatut;
 
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Begin();
-            GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_panneauStatut, new Rectangle(0, 0, GLOBALS_GAME_RESSOURCES.VP_panneauStatut.Width, GLOBALS_GAME_RESSOURCES.VP_panneauStatut.Height), Color.White);
+            GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_panneauStatut,
+                new Rectangle(0, 0,
+                    GLOBALS_GAME_RESSOURCES.VP_panneauStatut.Width, GLOBALS_GAME_RESSOURCES.VP_panneauStatut.Height),
+                Color.White);
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.End();
 
             GLOBALS_GAME_RESSOURCES.GRAPHICS.GraphicsDevice.Viewport = GLOBALS_GAME_RESSOURCES.VP_panneauTour;
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Begin();
-            GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_panneauTour, new Rectangle(0, 0, GLOBALS_GAME_RESSOURCES.VP_panneauTour.Width, GLOBALS_GAME_RESSOURCES.VP_panneauTour.Height), Color.White);
+            GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_panneauTour,
+                new Rectangle(0, 0,
+                    GLOBALS_GAME_RESSOURCES.VP_panneauTour.Width, GLOBALS_GAME_RESSOURCES.VP_panneauTour.Height),
+                    Color.White);
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.End();
 
             GraphicsDevice.Viewport = GLOBALS_GAME_RESSOURCES.VP_minimap;
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Begin();
-            GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_minimap, new Rectangle(0, 0, GLOBALS_GAME_RESSOURCES.VP_minimap.Width, GLOBALS_GAME_RESSOURCES.VP_minimap.Height), Color.White);
+            GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_minimap,
+                new Rectangle(0, 0,
+                    GLOBALS_GAME_RESSOURCES.VP_minimap.Width, GLOBALS_GAME_RESSOURCES.VP_minimap.Height),
+                    Color.White);
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.End();
 
             //GraphicsDevice.Viewport = vp_viewGame;
