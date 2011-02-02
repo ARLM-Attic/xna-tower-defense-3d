@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace ScreenManager
+namespace GlobalsComponent
 {
     /// <summary>
     /// This is a game component that implements IUpdateable.
@@ -39,6 +39,7 @@ namespace ScreenManager
         public static void Initialize()
         {
             // TODO: Add your initialization code here
+            screenList = new List<Screen>();
         }
 
         public static void add(Screen screen)
