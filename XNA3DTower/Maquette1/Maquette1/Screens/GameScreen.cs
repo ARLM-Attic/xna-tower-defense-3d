@@ -12,6 +12,7 @@ namespace Maquette1.MainFiles
         public GameScreen(Game game)
             : base(game)
         {
+            Name = "game";
             // TODO: Complete member initialization
         }
 
