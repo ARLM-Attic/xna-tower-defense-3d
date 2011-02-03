@@ -1,0 +1,2 @@
+﻿Class terrain : 
+	Enlever les appel et methode d'affichage ecran. Si besoin pour debugage utiliser un visitor.
