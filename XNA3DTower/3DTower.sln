@@ -1,35 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maquette1", "Maquette1\Maquette1\Maquette1.csproj", "{DEE79D33-CFDE-4D0B-8287-9EA126991144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoteurGraphique", "Maquette1\Maquette1\MoteurGraphique.csproj", "{DEE79D33-CFDE-4D0B-8287-9EA126991144}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maquette1Content", "Maquette1\Maquette1Content\Maquette1Content.contentproj", "{D47B3A82-85CA-47C3-AA03-7991468B2DC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoteurGraphiqueContent", "Maquette1\Maquette1Content\MoteurGraphiqueContent.contentproj", "{D47B3A82-85CA-47C3-AA03-7991468B2DC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUILibrary", "GUILibrary\GUILibrary.csproj", "{C657C128-F98F-4CE5-BB4A-6973AE7412FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalsComponent", "GlobalsComponent\GlobalsComponent.csproj", "{247ABECE-791A-4C42-A5DD-FE4EF884DB30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architechture", "TowerDef\TowerIHM\Architechture.csproj", "{F217FF52-F837-46A9-A96E-B27B40D8D4DF}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs26
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = GUILibrary\\GUILibrary.csproj
-		SccProjectName1 = GUILibrary
-		SccLocalPath1 = GUILibrary
-		SccProjectUniqueName2 = Maquette1\\Maquette1\\Maquette1.csproj
-		SccProjectName2 = Maquette1/Maquette1
-		SccLocalPath2 = Maquette1\\Maquette1
-		SccProjectUniqueName3 = Maquette1\\Maquette1Content\\Maquette1Content.contentproj
-		SccProjectName3 = Maquette1/Maquette1Content
-		SccLocalPath3 = Maquette1\\Maquette1Content
-		SccProjectUniqueName4 = GlobalsComponent\\GlobalsComponent.csproj
-		SccProjectName4 = GlobalsComponent
-		SccLocalPath4 = GlobalsComponent
-		SccProjectUniqueName5 = WindowsGameLibrary1\\ScreenManager.csproj
-		SccProjectName5 = WindowsGameLibrary1
-		SccLocalPath5 = WindowsGameLibrary1
+		SccProjectUniqueName0 = GUILibrary\\GUILibrary.csproj
+		SccProjectName0 = GUILibrary
+		SccLocalPath0 = GUILibrary
+		SccProjectUniqueName1 = GlobalsComponent\\GlobalsComponent.csproj
+		SccProjectName1 = GlobalsComponent
+		SccLocalPath1 = GlobalsComponent
+		SccProjectUniqueName2 = TowerDef\\TowerIHM\\Architechture.csproj
+		SccProjectName2 = ../TowerDef/TowerIHM
+		SccLocalPath2 = TowerDef\\TowerIHM
+		SccProjectUniqueName3 = Maquette1\\Maquette1\\MoteurGraphique.csproj
+		SccProjectName3 = Maquette1/Maquette1
+		SccLocalPath3 = Maquette1\\Maquette1
+		SccProjectUniqueName4 = Maquette1\\Maquette1Content\\MoteurGraphiqueContent.contentproj
+		SccProjectName4 = Maquette1/Maquette1Content
+		SccLocalPath4 = Maquette1\\Maquette1Content
+		SccLocalPath5 = .
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -50,6 +52,10 @@ Global
 		{247ABECE-791A-4C42-A5DD-FE4EF884DB30}.Debug|x86.Build.0 = Debug|x86
 		{247ABECE-791A-4C42-A5DD-FE4EF884DB30}.Release|x86.ActiveCfg = Release|x86
 		{247ABECE-791A-4C42-A5DD-FE4EF884DB30}.Release|x86.Build.0 = Release|x86
+		{F217FF52-F837-46A9-A96E-B27B40D8D4DF}.Debug|x86.ActiveCfg = Debug|x86
+		{F217FF52-F837-46A9-A96E-B27B40D8D4DF}.Debug|x86.Build.0 = Debug|x86
+		{F217FF52-F837-46A9-A96E-B27B40D8D4DF}.Release|x86.ActiveCfg = Release|x86
+		{F217FF52-F837-46A9-A96E-B27B40D8D4DF}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

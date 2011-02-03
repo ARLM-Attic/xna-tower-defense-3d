@@ -21,6 +21,8 @@ namespace GlobalsComponent
             TX_panneauTour,
             TX_minimap;
 
+        public static Texture2D[] Images { get; set; }
+
         //Model
 
         public static void Initialize()
@@ -61,7 +63,5 @@ namespace GlobalsComponent
 
             Images = new Texture2D[3];
         }
-
-        public static Texture2D[] Images { get; set; }
     }
 }

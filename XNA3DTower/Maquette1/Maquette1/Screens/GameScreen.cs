@@ -21,7 +21,7 @@ namespace Maquette1.MainFiles
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             // TODO: Add your update logic here
 
@@ -35,14 +35,14 @@ namespace Maquette1.MainFiles
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime)
+        public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
 
             //Changement de vp
-            //GraphicsDevice.Viewport = vp_panneauStatut;
+            GraphicsDevice.Viewport = GLOBALS_GAME_RESSOURCES.VP_panneauStatut;
 
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Begin();
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_panneauStatut,
@@ -51,7 +51,8 @@ namespace Maquette1.MainFiles
                 Color.White);
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.End();
 
-            GLOBALS_GAME_RESSOURCES.GRAPHICS.GraphicsDevice.Viewport = GLOBALS_GAME_RESSOURCES.VP_panneauTour;
+            GraphicsDevice.Viewport = GLOBALS_GAME_RESSOURCES.VP_panneauTour;
+
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Begin();
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_panneauTour,
                 new Rectangle(0, 0,
@@ -60,6 +61,7 @@ namespace Maquette1.MainFiles
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.End();
 
             GraphicsDevice.Viewport = GLOBALS_GAME_RESSOURCES.VP_minimap;
+
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Begin();
             GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.TX_minimap,
                 new Rectangle(0, 0,

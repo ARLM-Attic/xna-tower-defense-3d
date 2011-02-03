@@ -26,6 +26,7 @@ namespace Maquette1
             GameScreen gs = new GameScreen(this);
 
             GlobalsComponent.ScreenManager.add(os);
+            GlobalsComponent.ScreenManager.add(gs);
             Components.Add(os);
         }
 
@@ -41,13 +42,13 @@ namespace Maquette1
             //
 
             IsMouseVisible = true;
-            GLOBALS_GAME_RESSOURCES.Initialize();
+
             //Initialisation des parametre de la fenetre
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferHeight = 1024;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferWidth = 1280;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferFormat = SurfaceFormat.Rg32;
 
-            //GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
+            GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
             GLOBALS_GAME_RESSOURCES.GRAPHICS.ApplyChanges();
 
             base.Initialize();
@@ -59,9 +60,15 @@ namespace Maquette1
         /// </summary>
         protected override void LoadContent()
         {
+            GLOBALS_GAME_RESSOURCES.Initialize();
             GLOBALS_GAME_RESSOURCES.Images[0] = Content.Load<Texture2D>("Images/Shiki1");
             GLOBALS_GAME_RESSOURCES.Images[1] = Content.Load<Texture2D>("Images/Shiki2");
             GLOBALS_GAME_RESSOURCES.Images[2] = Content.Load<Texture2D>("Images/Shiki3");
+
+            //Texture
+            GLOBALS_GAME_RESSOURCES.TX_panneauStatut = Content.Load<Texture2D>("Textures/planet-001");
+            GLOBALS_GAME_RESSOURCES.TX_panneauTour = Content.Load<Texture2D>("Textures/paves_32x32");
+            GLOBALS_GAME_RESSOURCES.TX_minimap = Content.Load<Texture2D>("Textures/vert_32x32");
         }
 
         /// <summary>

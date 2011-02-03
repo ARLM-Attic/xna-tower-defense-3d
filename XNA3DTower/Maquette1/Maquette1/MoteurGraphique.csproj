@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\FPS_GC.cs" />
+    <Compile Include="Map\CaseGraphique.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\OpeningScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,8 +133,8 @@
       <Project>{C657C128-F98F-4CE5-BB4A-6973AE7412FD}</Project>
       <Name>GUILibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Maquette1Content\Maquette1Content.contentproj">
-      <Name>Maquette1Content %28Content%29</Name>
+    <ProjectReference Include="..\Maquette1Content\MoteurGraphiqueContent.contentproj">
+      <Name>MoteurGraphiqueContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
       <Project>{D47B3A82-85CA-47C3-AA03-7991468B2DC2}</Project>
     </ProjectReference>
