@@ -5,10 +5,10 @@ using System.Text;
 
 namespace TowerDef
 {
-    class Projectile
+    partial class Projectile
     {
-        Position3D position;
-        int vitesse;
-        int ZoneEffet;
+        private Position3D position;
+        private int vitesse;
+        private int ZoneEffet;
     }
 }

@@ -5,10 +5,10 @@ using System.Text;
 
 namespace TowerDef
 {
-    class Vague
+    partial class Vague
     {
-        public int Nb_unites;
-        List<Unite> Unites;
+        private int Nb_unites;
+        private List<Unite> Unites;
 
         public Vague(int nb_unite) 
         {
@@ -16,6 +16,8 @@ namespace TowerDef
             Unites = new List<Unite>();
         }
 
+
+        //edition vague
         public void AjouterUnite(Unite u) 
         {
             if (Unites.Count() < Nb_unites - 1)
@@ -24,6 +26,13 @@ namespace TowerDef
             }
         }
 
+        public void SupprimerUnite(Unite u) 
+        {
+            
+        }
+
+
+        //affichage 
         public String Composition() 
         {
             String ret = "";
@@ -33,5 +42,7 @@ namespace TowerDef
             }
             return ret;
         }
+
+
     }
 }

@@ -5,10 +5,10 @@ using System.Text;
 
 namespace TowerDef
 {
-    class Terrain
+    partial class Terrain
     {
-        const int TAILLE_CASE = 32;
-        String NomCarte;
+        private const int TAILLE_CASE = 32;
+        private String NomCarte;
 
         /* X, Y , Z niveau abstraction case */
         public int Horizontal;

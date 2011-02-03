@@ -3,32 +3,29 @@
 
 namespace TowerDef
 {
-    class Unite
+    partial class Unite
     {
-        String nom;
-        int pv;
-        int vitesse;
-        Position3D Position;
+        private String nom;
+        private int point_vie;
+        private int vitesse;
+        private Position3D Position;
             
         /*
          * constructeur 
          */
-        public Unite() 
-        {
-            
-        }
 
         public Unite(String nom, int pv)
         {
             this.nom = nom;  
             this.vitesse = 100;
-            this.pv = pv;
+            this.point_vie = pv;
             Position = new Position3D();
         }
 
         /*
          * methode affectant le mouvement de l'unité
          */
+        
         public void ReduireVitesse(int pourcentage) 
         {
             this.vitesse = this.vitesse - ((this.vitesse * pourcentage) / 100);
@@ -57,9 +54,10 @@ namespace TowerDef
         /*
          * Gestion des degats
          */
+
         public void Mourir() 
         {
-            if (this.pv <= 0) 
+            if (this.point_vie <= 0) 
             {
                 Console.WriteLine(this.nom + " : je meurt !! quelqu'un voudrai me mettre un peu de terre j'aimerai dormir maintenant \n");
             }
@@ -71,13 +69,13 @@ namespace TowerDef
 
         public void Attaquer(int degat) 
         {
-            this.pv = this.pv - degat;
+            this.point_vie = this.point_vie - degat;
             Mourir();
         }
 
         public void Soigner(int soin)
         {
-            this.pv = this.pv + soin;
+            this.point_vie = this.point_vie + soin;
         }
 
         /*
@@ -87,7 +85,7 @@ namespace TowerDef
         {
                 String ret = "";
                 ret += "nom : " + this.nom;
-                ret += " vie : " + this.pv;
+                ret += " vie : " + this.point_vie;
                 ret += " deplacement : " + this.vitesse;
                 return ret;
         }

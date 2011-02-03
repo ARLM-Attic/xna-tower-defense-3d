@@ -7,7 +7,6 @@ namespace TowerDef.tour
 {
     class ProjectileUnite
     {
-        Projectile p;
-        Unite u;
+        private Unite u;
     }
 }

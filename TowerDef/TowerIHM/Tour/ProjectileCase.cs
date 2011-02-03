@@ -7,7 +7,6 @@ namespace TowerDef.tour
 {
     class ProjectileCase : Projectile
     {
-        Projectile p;
-        Case cible;
+        private Case cible;
     }
 }

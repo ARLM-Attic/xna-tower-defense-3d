@@ -7,11 +7,9 @@ namespace TowerDef
 {
     class CaseFin : Case
     {
-        Case Fin;
-
         public CaseFin(int x , int y) 
         {
-            Fin = new Case(x, y, 0, false, true); 
+            new Case(x, y, 0, false, true); 
         }
     }
 }

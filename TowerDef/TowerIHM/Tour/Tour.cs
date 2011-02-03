@@ -5,18 +5,18 @@ using System.Text;
 
 namespace TowerDef
 {
-    class Tour
+    partial class Tour
     {
-        int porte;
-        int degat;
-        int nbCible;
+        private int porte;
+        private int degat;
+        private int nbCible;
 
-        int nb_tic_timer;
-        List<Projectile> projectiles;
-        
-        bool volant;
-        List<Case> cibles;
-        List<Case> implentation;
+        private int nb_tic_timer;
+        private List<Projectile> projectiles;
+
+        private bool volant;
+        private List<Case> cibles;
+        private List<Case> implentation;
 
         public Tour(int porte, int degat, bool volant) 
         {

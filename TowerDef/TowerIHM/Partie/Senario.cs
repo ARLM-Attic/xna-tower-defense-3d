@@ -7,17 +7,17 @@ namespace TowerDef
 {
     class Senario
     {
-        public const int NB_VAGUE = 10;
-        public const int NB_MAX_JOUEUR = 2;
+        private const int NB_VAGUE = 10;
+        private const int NB_MAX_JOUEUR = 2;
 
-        public int Nb_vie;
+        private int Nb_vie;
 
-        public Joueur[] Joueurs;
-        public Terrain terrain;
+        private Joueur[] Joueurs;
+        private Terrain terrain;
 
-        public Vague[] Vagues;
-        public List<Tour> Tours;
-        
+        private Vague[] Vagues;
+        private List<Tour> Tours;
+
         public Senario(int nb_vie) 
         {
             this.Nb_vie = nb_vie;

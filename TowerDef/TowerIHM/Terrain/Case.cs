@@ -5,19 +5,19 @@ using System.Text;
 
 namespace TowerDef
 {
-    class Case 
+    partial class Case 
     {
         //coordonnée de la case dans le terrain
-        public int X;
-        public int Y;
-        public int Z;
+        private int X;
+        private int Y;
+        private int Z;
         //public Terrain Carte;
 
         // propriete de la case
-        public bool Constructible;
-        public bool Construite;
-        public bool Praticable;
-        public List<Unite> Unites;
+        private bool Constructible;
+        private bool Construite;
+        private bool Praticable;
+        private List<Unite> Unites;
         
         public Case() 
         {

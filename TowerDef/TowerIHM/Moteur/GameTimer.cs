@@ -8,9 +8,9 @@ namespace TowerDef.moteur
 {
     class GameTimer
     {
-        static int tic;
-        static int tic_par_sec;
-        static Timer myTimer;
+        private static int tic;
+        private static int tic_par_sec;
+        private static Timer myTimer;
 
         public GameTimer(int ms) 
         {

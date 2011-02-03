@@ -7,7 +7,7 @@ namespace TowerDef
 {
     class Moteur
     {
-        public Terrain Carte;
+        private Terrain Carte;
 
         public Moteur(Terrain map) 
         {
