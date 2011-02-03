@@ -48,7 +48,7 @@ namespace Maquette1
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferWidth = 1280;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferFormat = SurfaceFormat.Rg32;
 
-            GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
+            //GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
             GLOBALS_GAME_RESSOURCES.GRAPHICS.ApplyChanges();
 
             base.Initialize();
