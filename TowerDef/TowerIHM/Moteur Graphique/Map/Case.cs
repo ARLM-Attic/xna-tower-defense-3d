@@ -6,7 +6,7 @@ using GlobalsComponent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MoteurGraphique.Map
+namespace TowerDef
 {
     partial class Case : IDrawable
     {

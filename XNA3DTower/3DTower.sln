@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoteurGraphique", "Maquette1\Maquette1\MoteurGraphique.csproj", "{DEE79D33-CFDE-4D0B-8287-9EA126991144}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoteurGraphiqueContent", "Maquette1\Maquette1Content\MoteurGraphiqueContent.contentproj", "{D47B3A82-85CA-47C3-AA03-7991468B2DC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUILibrary", "GUILibrary\GUILibrary.csproj", "{C657C128-F98F-4CE5-BB4A-6973AE7412FD}"
@@ -13,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeu", "TowerDef\TowerIHM\Je
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs26
 		SccLocalPath0 = .
@@ -23,25 +21,18 @@ Global
 		SccProjectUniqueName2 = GlobalsComponent\\GlobalsComponent.csproj
 		SccProjectName2 = GlobalsComponent
 		SccLocalPath2 = GlobalsComponent
-		SccProjectUniqueName3 = Maquette1\\Maquette1\\MoteurGraphique.csproj
-		SccProjectName3 = Maquette1/Maquette1
-		SccLocalPath3 = Maquette1\\Maquette1
-		SccProjectUniqueName4 = Maquette1\\Maquette1Content\\MoteurGraphiqueContent.contentproj
-		SccProjectName4 = Maquette1/Maquette1Content
-		SccLocalPath4 = Maquette1\\Maquette1Content
-		SccProjectUniqueName5 = TowerDef\\TowerIHM\\Jeu.csproj
-		SccProjectName5 = ../TowerDef/TowerIHM
-		SccLocalPath5 = TowerDef\\TowerIHM
+		SccProjectUniqueName3 = Maquette1\\Maquette1Content\\MoteurGraphiqueContent.contentproj
+		SccProjectName3 = Maquette1/Maquette1Content
+		SccLocalPath3 = Maquette1\\Maquette1Content
+		SccProjectUniqueName4 = TowerDef\\TowerIHM\\Jeu.csproj
+		SccProjectName4 = ../TowerDef/TowerIHM
+		SccLocalPath4 = TowerDef\\TowerIHM
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DEE79D33-CFDE-4D0B-8287-9EA126991144}.Debug|x86.ActiveCfg = Debug|x86
-		{DEE79D33-CFDE-4D0B-8287-9EA126991144}.Debug|x86.Build.0 = Debug|x86
-		{DEE79D33-CFDE-4D0B-8287-9EA126991144}.Release|x86.ActiveCfg = Release|x86
-		{DEE79D33-CFDE-4D0B-8287-9EA126991144}.Release|x86.Build.0 = Release|x86
 		{D47B3A82-85CA-47C3-AA03-7991468B2DC2}.Debug|x86.ActiveCfg = Debug|x86
 		{D47B3A82-85CA-47C3-AA03-7991468B2DC2}.Release|x86.ActiveCfg = Release|x86
 		{C657C128-F98F-4CE5-BB4A-6973AE7412FD}.Debug|x86.ActiveCfg = Debug|x86
