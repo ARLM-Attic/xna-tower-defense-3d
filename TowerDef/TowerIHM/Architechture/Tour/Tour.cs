@@ -2,20 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TowerDef.Map;
+using TowerDef.Unit;
 
-namespace TowerDef
+namespace TowerDef.Tower
 {
-    public partial class Tour
+    partial class Tour
     {
         public int porte { get; private set; }
+
         public int degat { get; private set; }
+
         public int nbCible { get; private set; }
 
         public int nb_tic_timer { get; private set; }
+
         public List<Projectile> projectiles { get; private set; }
 
         public bool volant { get; private set; }
+
         public List<Case> cibles { get; private set; }
+
         public List<Case> implentation { get; private set; }
 
         public Tour(int porte, int degat, bool volant)

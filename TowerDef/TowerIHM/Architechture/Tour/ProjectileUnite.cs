@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TowerDef.Unit;
 
-namespace TowerDef.tour
+namespace TowerDef.Tower
 {
-    public class ProjectileUnite
+    class ProjectileUnite : Projectile
     {
         private Unite u;
     }

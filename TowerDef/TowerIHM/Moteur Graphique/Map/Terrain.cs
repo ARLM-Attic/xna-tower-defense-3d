@@ -5,9 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Maquette1.Map
+namespace TowerDef.Map
 {
-    public partial class Terrain : IDrawable
+    partial class Terrain : IDrawable
     {
         //Texture2D textureChemin;
         //Texture2D textureConstructible;

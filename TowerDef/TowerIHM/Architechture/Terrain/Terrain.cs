@@ -3,28 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TowerDef
+namespace TowerDef.Map
 {
     partial class Terrain
     {
         private const int TAILLE_CASE = 32;
+
         public String NomCarte { get; private set; }
 
         /* X, Y , Z niveau abstraction case */
+
         public int Horizontal { get; private set; }
+
         public int Vertical { get; private set; }
+
         public int Profondeur { get; private set; }
 
         /* X, Y, Z niveau moteur 3D */
+
         public int x { get; private set; }
+
         public int y { get; private set; }
+
         public int z { get; private set; }
+
         // z varie de 2 hauteur de terrain pour les tour et les unite (0,1) dans un premier temp
 
-        public Case[,] Carte { get; private set; } //plateau de jeu 
+        public Case[,] Carte { get; private set; } //plateau de jeu
+
         public CaseDebut Debut { get; private set; } //case de depart (definit au passage les case de fin cf classe)
 
-        public Terrain(String mapName, int longeur, int largeur, int profondeur) 
+        public Terrain(String mapName, int longeur, int largeur, int profondeur)
         {
             if (largeur > 0 & longeur > 0 & profondeur > 0)
             {
@@ -45,7 +54,7 @@ namespace TowerDef
             }
         }
 
-        public void initTerrain() 
+        public void initTerrain()
         {
             int i = 0;
             int j = 0;
@@ -62,26 +71,26 @@ namespace TowerDef
 
             // -1 du a l'indexage 0..n
             CaseFin fin = new CaseFin(this.Horizontal - 1, this.Vertical - 1);
-            CaseDebut Debut = new CaseDebut(0,0);
+            CaseDebut Debut = new CaseDebut(0, 0);
             Debut.AjouterFin(fin);
         }
 
-        public override String ToString() 
+        public override String ToString()
         {
             String ret = "";
             int i = 0;
             int j = 0;
-            while (i < this.Vertical) 
+            while (i < this.Vertical)
             {
-                while (j < this.Horizontal) 
+                while (j < this.Horizontal)
                 {
-                    if (Carte[j,i].Praticable)
+                    if (Carte[j, i].Praticable)
                     {
                         if (Carte[j, i].Unites.Count > 0)
                         {
                             ret += "X";
                         }
-                        else 
+                        else
                         {
                             ret += " ";
                         }

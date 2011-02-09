@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TowerDef
+namespace TowerDef.Tower
 {
     partial class Projectile
     {

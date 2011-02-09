@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TowerDef.Tower;
 
 namespace TowerDef
 {
@@ -11,7 +12,7 @@ namespace TowerDef
         public List<Ressource> Ressources { get; private set; }
         public List<Tour> Tours { get; private set; }
 
-        public Joueur() 
+        public Joueur()
         {
             this.Nom = "Joueur";
             Ressources = new List<Ressource>();
@@ -25,7 +26,7 @@ namespace TowerDef
             Tours = new List<Tour>();
         }
 
-        public void AjouterRessource(Ressource r) 
+        public void AjouterRessource(Ressource r)
         {
             Ressources.Add(r);
         }

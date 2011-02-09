@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TowerDef.Map;
+using TowerDef.Tower;
+using TowerDef.Unit;
 
 namespace TowerDef
 {
@@ -13,23 +16,25 @@ namespace TowerDef
         public int Nb_vie { get; private set; }
 
         public Joueur[] Joueurs { get; private set; }
-        public Terrain Terrain { get; private set; }
+
+        public Terrain Terrain { get; set; }
 
         public Vague[] Vagues { get; private set; }
+
         public List<Tour> Tours { get; private set; }
 
-        public Senario(int nb_vie) 
+        public Senario(int nb_vie)
         {
             this.Nb_vie = nb_vie;
 
             Joueurs = new Joueur[NB_MAX_JOUEUR];
-            
+
             Vagues = new Vague[NB_VAGUE];
-            
+
             Tours = new List<Tour>();
         }
 
-        public void InitJoueur(int nb_joueur) 
+        public void InitJoueur(int nb_joueur)
         {
             int i = 0;
 
@@ -43,7 +48,7 @@ namespace TowerDef
             }
         }
 
-        public void ChargerVague(Vague v) 
+        public void ChargerVague(Vague v)
         {
             if (Vagues.Count() < NB_VAGUE - 1)
             {
@@ -56,12 +61,12 @@ namespace TowerDef
             // chargement d'une partie
         }
 
-        public void Sauvegarder() 
+        public void Sauvegarder()
         {
             // sauvegarde d'une partie
         }
 
-        public void Creer() 
+        public void Creer()
         {
             //editeur de map
         }
