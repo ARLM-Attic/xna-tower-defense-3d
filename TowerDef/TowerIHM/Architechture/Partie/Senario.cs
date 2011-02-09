@@ -10,19 +10,13 @@ namespace TowerDef
         private const int NB_VAGUE = 10;
         private const int NB_MAX_JOUEUR = 2;
 
-        private int Nb_vie;
+        public int Nb_vie { get; private set; }
 
-        private Joueur[] Joueurs;
-        private Terrain terrain;
+        public Joueur[] Joueurs { get; private set; }
+        public Terrain Terrain { get; private set; }
 
-        internal Terrain Terrain
-        {
-            get { return terrain; }
-            set { terrain = value; }
-        }
-
-        private Vague[] Vagues;
-        private List<Tour> Tours;
+        public Vague[] Vagues { get; private set; }
+        public List<Tour> Tours { get; private set; }
 
         public Senario(int nb_vie) 
         {

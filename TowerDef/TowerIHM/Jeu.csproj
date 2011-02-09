@@ -119,11 +119,11 @@
     <Content Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GlobalsComponent\GlobalsComponent.csproj">
+    <ProjectReference Include="..\..\..\..\c#\TowerDefense\XNA3DTower\GlobalsComponent\GlobalsComponent.csproj">
       <Project>{247ABECE-791A-4C42-A5DD-FE4EF884DB30}</Project>
       <Name>GlobalsComponent</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\GUILibrary\GUILibrary.csproj">
+    <ProjectReference Include="..\..\..\..\c#\TowerDefense\XNA3DTower\GUILibrary\GUILibrary.csproj">
       <Project>{C657C128-F98F-4CE5-BB4A-6973AE7412FD}</Project>
       <Name>GUILibrary</Name>
     </ProjectReference>

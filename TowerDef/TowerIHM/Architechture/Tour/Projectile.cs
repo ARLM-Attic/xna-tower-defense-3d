@@ -7,8 +7,8 @@ namespace TowerDef
 {
     partial class Projectile
     {
-        private Position3D position;
-        private int vitesse;
-        private int ZoneEffet;
+        public Position3D position { get; private set; }
+        public int vitesse { get; private set; }
+        public int ZoneEffet { get; private set; }
     }
 }

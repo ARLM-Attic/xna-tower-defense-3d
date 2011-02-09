@@ -7,10 +7,10 @@ namespace TowerDef
 {
     class Position3D
     {
-        private int X;
-        private int Y;
-        private int Z;
-        private int O; //orientation
+        public int X { get; private set; }
+        public int Y { get; private set; }
+        public int Z { get; private set; }
+        public int O { get; private set; } //orientation
 
         public Position3D(int x, int y, int z, int o) 
         {

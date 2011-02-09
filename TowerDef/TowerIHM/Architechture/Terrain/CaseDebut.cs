@@ -7,7 +7,7 @@ namespace TowerDef
 {
     class CaseDebut : Case
     {
-        private CaseFin Fin;
+        public CaseFin Fin { get; private set; }
 
         public CaseDebut(int x, int y) 
         {

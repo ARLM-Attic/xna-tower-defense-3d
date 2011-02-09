@@ -7,9 +7,9 @@ namespace TowerDef
 {
     class Joueur
     {
-        private String Nom;
-        private List<Ressource> Ressources;
-        private List<Tour> Tours;
+        public String Nom { get; private set; }
+        public List<Ressource> Ressources { get; private set; }
+        public List<Tour> Tours { get; private set; }
 
         public Joueur() 
         {

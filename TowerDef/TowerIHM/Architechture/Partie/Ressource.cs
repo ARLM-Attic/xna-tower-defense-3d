@@ -7,8 +7,8 @@ namespace TowerDef
 {
     class Ressource
     {
-        private String nomRessources;
-        private int Ressources;
+        public String nomRessources { get; private set; }
+        public int Ressources { get; private set; }
 
         public Ressource(String nom, int montant)
         {

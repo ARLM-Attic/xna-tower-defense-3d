@@ -7,16 +7,16 @@ namespace TowerDef
 {
     public partial class Tour
     {
-        private int porte;
-        private int degat;
-        private int nbCible;
+        public int porte { get; private set; }
+        public int degat { get; private set; }
+        public int nbCible { get; private set; }
 
-        private int nb_tic_timer;
-        private List<Projectile> projectiles;
+        public int nb_tic_timer { get; private set; }
+        public List<Projectile> projectiles { get; private set; }
 
-        private bool volant;
-        private List<Case> cibles;
-        private List<Case> implentation;
+        public bool volant { get; private set; }
+        public List<Case> cibles { get; private set; }
+        public List<Case> implentation { get; private set; }
 
         public Tour(int porte, int degat, bool volant)
         {
