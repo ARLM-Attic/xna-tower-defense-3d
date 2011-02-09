@@ -8,16 +8,17 @@ namespace TowerDef
     partial class Case 
     {
         //coordonnée de la case dans le terrain
-        private int X;
-        private int Y;
-        private int Z;
+        public int X { get; private set; }
+        public int Y { get; private set; }
+        public int Z { get; private set; }
         //public Terrain Carte;
 
         // propriete de la case
-        private bool Constructible;
-        private bool Construite;
-        private bool Praticable;
-        private List<Unite> Unites;
+        public bool Constructible { get; private set; }
+        public bool Construite { get; private set; }
+        public bool Praticable { get; private set; }
+
+        public List<Unite> Unites { get; private set; }
         
         public Case() 
         {
@@ -54,6 +55,5 @@ namespace TowerDef
                 u.Attaquer(degat);
             }
         }
-       
-   }
+    }
 }

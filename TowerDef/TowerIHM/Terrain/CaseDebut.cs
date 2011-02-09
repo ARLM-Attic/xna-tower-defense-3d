@@ -16,15 +16,7 @@ namespace TowerDef
 
         public void AjouterFin(CaseFin cf) 
         {
-            if (Fin == null)
-            {
                 Fin = cf;
-                Unique = true;
-            }
-            else 
-            {
-                Fins.Add(cf);
-            }
         }
 
         public void SupprimerFin(int x, int y) 

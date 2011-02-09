@@ -7,15 +7,15 @@ namespace TowerDef
 {
     partial class Vague
     {
-        private int Nb_unites;
-        private List<Unite> Unites;
+
+        public int Nb_unites { get; private set; }
+        public List<Unite> Unites {get; private set;}
 
         public Vague(int nb_unite) 
         {
-            this.Nb_unites = nb_unite;
+            Nb_unites = nb_unite;
             Unites = new List<Unite>();
         }
-
 
         //edition vague
         public void AjouterUnite(Unite u) 
@@ -28,7 +28,7 @@ namespace TowerDef
 
         public void SupprimerUnite(Unite u) 
         {
-            
+            Unites.Remove(u);
         }
 
 

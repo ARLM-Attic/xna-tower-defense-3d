@@ -22,11 +22,11 @@ namespace TowerDef
             
             Senario s = new Senario(100);
             s.InitJoueur(2);
-            s.terrain = t;
+            s.Terrain = t;
            
 
 
-            Moteur m = new Moteur(s.terrain);
+            Moteur m = new Moteur(s.Terrain);
         }
         
     }

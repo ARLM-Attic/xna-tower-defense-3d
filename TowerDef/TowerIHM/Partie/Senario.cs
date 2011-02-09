@@ -15,6 +15,12 @@ namespace TowerDef
         private Joueur[] Joueurs;
         private Terrain terrain;
 
+        internal Terrain Terrain
+        {
+            get { return terrain; }
+            set { terrain = value; }
+        }
+
         private Vague[] Vagues;
         private List<Tour> Tours;
 

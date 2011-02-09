@@ -5,10 +5,10 @@ namespace TowerDef
 {
     partial class Unite
     {
-        private String nom;
-        private int point_vie;
-        private int vitesse;
-        private Position3D Position;
+        public String Nom { get; private set; }
+        public int PointVie { get; private set; }
+        public int Vitesse { get; private set; }
+        public Position3D Position { get; private set; }
             
         /*
          * constructeur 
@@ -16,9 +16,9 @@ namespace TowerDef
 
         public Unite(String nom, int pv)
         {
-            this.nom = nom;  
-            this.vitesse = 100;
-            this.point_vie = pv;
+            this.Nom = nom;  
+            this.Vitesse = 100;
+            this.PointVie = pv;
             Position = new Position3D();
         }
 
@@ -28,22 +28,22 @@ namespace TowerDef
         
         public void ReduireVitesse(int pourcentage) 
         {
-            this.vitesse = this.vitesse - ((this.vitesse * pourcentage) / 100);
+            this.Vitesse = this.Vitesse - ((this.Vitesse * pourcentage) / 100);
         }
 
         public void ReduireVitesseL(int v)
         {
-            this.vitesse = this.vitesse - v;
+            this.Vitesse = this.Vitesse - v;
         }
 
         public void AugmenterVitesse(int pourcentage)
         {
-            this.vitesse = this.vitesse + ((this.vitesse * pourcentage) / 100);
+            this.Vitesse = this.Vitesse + ((this.Vitesse * pourcentage) / 100);
         }
 
         public void AugmenterVitesseL(int v)
         {
-            this.vitesse = this.vitesse + v;
+            this.Vitesse = this.Vitesse + v;
         }
 
         public void Deplacer(Terrain t,Case c) 
@@ -57,25 +57,25 @@ namespace TowerDef
 
         public void Mourir() 
         {
-            if (this.point_vie <= 0) 
+            if (this.PointVie <= 0) 
             {
-                Console.WriteLine(this.nom + " : je meurt !! quelqu'un voudrai me mettre un peu de terre j'aimerai dormir maintenant \n");
+                Console.WriteLine(this.Nom + " : je meurt !! quelqu'un voudrai me mettre un peu de terre j'aimerai dormir maintenant \n");
             }
             else
             {
-                Console.WriteLine(this.nom + " : meme pas mal, encore ? \n");
+                Console.WriteLine(this.Nom + " : meme pas mal, encore ? \n");
             }
         }
 
         public void Attaquer(int degat) 
         {
-            this.point_vie = this.point_vie - degat;
+            this.PointVie = this.PointVie - degat;
             Mourir();
         }
 
         public void Soigner(int soin)
         {
-            this.point_vie = this.point_vie + soin;
+            this.PointVie = this.PointVie + soin;
         }
 
         /*
@@ -84,9 +84,9 @@ namespace TowerDef
         public override String ToString() 
         {
                 String ret = "";
-                ret += "nom : " + this.nom;
-                ret += " vie : " + this.point_vie;
-                ret += " deplacement : " + this.vitesse;
+                ret += "nom : " + this.Nom;
+                ret += " vie : " + this.PointVie;
+                ret += " deplacement : " + this.Vitesse;
                 return ret;
         }
 
