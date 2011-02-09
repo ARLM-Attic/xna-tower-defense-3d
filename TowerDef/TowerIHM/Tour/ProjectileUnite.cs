@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TowerDef.tour
 {
-    class ProjectileUnite
+    public class ProjectileUnite
     {
         private Unite u;
     }

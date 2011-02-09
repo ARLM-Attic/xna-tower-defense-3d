@@ -7,14 +7,19 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Maquette1.Map
 {
-    partial class Terrain : IDrawable
+    public partial class Terrain : IDrawable
     {
-        Texture2D textureChemin;
-        Texture2D textureConstructible;
+        //Texture2D textureChemin;
+        //Texture2D textureConstructible;
 
         public void Draw(GameTime gameTime)
         {
-            throw new NotImplementedException();
+            foreach (Case c in Carte)
+            {
+                c.Draw(gameTime);
+            }
+
+            //throw new NotImplementedException();
         }
 
         public int DrawOrder

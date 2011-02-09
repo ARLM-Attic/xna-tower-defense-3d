@@ -56,9 +56,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moteur\GameTimer.cs" />
-    <Compile Include="Moteur\Moteur.cs" />
-    <Compile Include="Moteur\Position3D.cs" />
+    <Compile Include="Moteur Calcul\GameTimer.cs" />
+    <Compile Include="Moteur Calcul\Moteur.cs" />
+    <Compile Include="Moteur Calcul\Position3D.cs" />
     <Compile Include="Partie\Joueur.cs" />
     <Compile Include="Partie\Partie.cs" />
     <Compile Include="Partie\Ressource.cs" />
@@ -97,6 +97,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Moteur Graphique\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TowerDef.tour
 {
-    class ProjectileCase : Projectile
+    public class ProjectileCase : Projectile
     {
         private Case cible;
     }

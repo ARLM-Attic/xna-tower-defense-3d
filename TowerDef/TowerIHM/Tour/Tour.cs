@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TowerDef
 {
-    partial class Tour
+    public partial class Tour
     {
         private int porte;
         private int degat;
@@ -18,32 +18,31 @@ namespace TowerDef
         private List<Case> cibles;
         private List<Case> implentation;
 
-        public Tour(int porte, int degat, bool volant) 
+        public Tour(int porte, int degat, bool volant)
         {
             this.porte = porte;
             this.degat = degat;
             this.volant = volant;
         }
 
-        public void attaquerCible(Unite u, int degat) 
+        public void attaquerCible(Unite u, int degat)
         {
             u.Attaquer(degat);
         }
 
-        public void attaquerZone(int etendu, int degat) 
+        public void attaquerZone(int etendu, int degat)
         {
-            foreach (Case cible in cibles) 
+            foreach (Case cible in cibles)
             {
                 cible.Attaquer(degat);
             }
-            //puis pour celle autour en foinction du range en connexité 8 
+            //puis pour celle autour en foinction du range en connexité 8
             // donc sur plateau + ou - range en X et Y par rapport au X et Y de la case courrante
         }
 
-        public void construire() 
+        public void construire()
         {
             // remplir toute cibles de tout les case comprios dans la porté qui sont (bool) pratiquable
         }
-
     }
 }
