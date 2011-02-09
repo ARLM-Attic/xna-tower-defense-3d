@@ -8,21 +8,21 @@ namespace TowerDef
     partial class Terrain
     {
         private const int TAILLE_CASE = 32;
-        private String NomCarte;
+        public String NomCarte { get; private set; }
 
         /* X, Y , Z niveau abstraction case */
-        public int Horizontal;
-        public int Vertical;
-        public int Profondeur;
+        public int Horizontal { get; private set; }
+        public int Vertical { get; private set; }
+        public int Profondeur { get; private set; }
 
         /* X, Y, Z niveau moteur 3D */
-        public int x;
-        public int y;
-        public int z;  // z varie de 2 hauteur de terrain pour les tour et les unite (0,1) dans un premier temp
-       
-        public Case[,] Carte; //plateau de jeu 
+        public int x { get; private set; }
+        public int y { get; private set; }
+        public int z { get; private set; }
+        // z varie de 2 hauteur de terrain pour les tour et les unite (0,1) dans un premier temp
 
-        public CaseDebut Debut; //case de depart (definit au passage les case de fin cf classe)
+        public Case[,] Carte { get; private set; } //plateau de jeu 
+        public CaseDebut Debut { get; private set; } //case de depart (definit au passage les case de fin cf classe)
 
         public Terrain(String mapName, int longeur, int largeur, int profondeur) 
         {
