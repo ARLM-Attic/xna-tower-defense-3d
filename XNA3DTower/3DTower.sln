@@ -9,29 +9,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUILibrary", "GUILibrary\GU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalsComponent", "GlobalsComponent\GlobalsComponent.csproj", "{247ABECE-791A-4C42-A5DD-FE4EF884DB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architechture", "TowerDef\TowerIHM\Architechture.csproj", "{F217FF52-F837-46A9-A96E-B27B40D8D4DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jeu", "TowerDef\TowerIHM\Jeu.csproj", "{F217FF52-F837-46A9-A96E-B27B40D8D4DF}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs26
-		SccProjectUniqueName0 = GUILibrary\\GUILibrary.csproj
-		SccProjectName0 = GUILibrary
-		SccLocalPath0 = GUILibrary
-		SccProjectUniqueName1 = GlobalsComponent\\GlobalsComponent.csproj
-		SccProjectName1 = GlobalsComponent
-		SccLocalPath1 = GlobalsComponent
-		SccProjectUniqueName2 = TowerDef\\TowerIHM\\Architechture.csproj
-		SccProjectName2 = ../TowerDef/TowerIHM
-		SccLocalPath2 = TowerDef\\TowerIHM
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GUILibrary\\GUILibrary.csproj
+		SccProjectName1 = GUILibrary
+		SccLocalPath1 = GUILibrary
+		SccProjectUniqueName2 = GlobalsComponent\\GlobalsComponent.csproj
+		SccProjectName2 = GlobalsComponent
+		SccLocalPath2 = GlobalsComponent
 		SccProjectUniqueName3 = Maquette1\\Maquette1\\MoteurGraphique.csproj
 		SccProjectName3 = Maquette1/Maquette1
 		SccLocalPath3 = Maquette1\\Maquette1
 		SccProjectUniqueName4 = Maquette1\\Maquette1Content\\MoteurGraphiqueContent.contentproj
 		SccProjectName4 = Maquette1/Maquette1Content
 		SccLocalPath4 = Maquette1\\Maquette1Content
-		SccLocalPath5 = .
+		SccProjectUniqueName5 = TowerDef\\TowerIHM\\Jeu.csproj
+		SccProjectName5 = ../TowerDef/TowerIHM
+		SccLocalPath5 = TowerDef\\TowerIHM
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86

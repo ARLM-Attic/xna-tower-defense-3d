@@ -134,9 +134,9 @@
       <Project>{C657C128-F98F-4CE5-BB4A-6973AE7412FD}</Project>
       <Name>GUILibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\TowerDef\TowerIHM\Architechture.csproj">
+    <ProjectReference Include="..\..\TowerDef\TowerIHM\Jeu.csproj">
       <Project>{F217FF52-F837-46A9-A96E-B27B40D8D4DF}</Project>
-      <Name>Architechture</Name>
+      <Name>Jeu</Name>
     </ProjectReference>
     <ProjectReference Include="..\Maquette1Content\MoteurGraphiqueContent.contentproj">
       <Name>MoteurGraphiqueContent %28Content%29</Name>

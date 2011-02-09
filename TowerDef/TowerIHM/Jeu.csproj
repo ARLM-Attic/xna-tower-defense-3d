@@ -56,25 +56,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Moteur Calcul\GameTimer.cs" />
-    <Compile Include="Moteur Calcul\Moteur.cs" />
-    <Compile Include="Moteur Calcul\Position3D.cs" />
-    <Compile Include="Partie\Joueur.cs" />
-    <Compile Include="Partie\Partie.cs" />
-    <Compile Include="Partie\Ressource.cs" />
-    <Compile Include="Partie\Senario.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Architechture\Moteur Calcul\GameTimer.cs" />
+    <Compile Include="Architechture\Moteur Calcul\Moteur.cs" />
+    <Compile Include="Architechture\Moteur Calcul\Position3D.cs" />
+    <Compile Include="Architechture\Partie\Joueur.cs" />
+    <Compile Include="Architechture\Partie\Partie.cs" />
+    <Compile Include="Architechture\Partie\Ressource.cs" />
+    <Compile Include="Architechture\Partie\Senario.cs" />
+    <Compile Include="Moteur Graphique\Components\FPS_GC.cs" />
+    <Compile Include="Moteur Graphique\MainFiles\GameMain.cs" />
+    <Compile Include="Moteur Graphique\MainFiles\ProgramGraphique.cs" />
+    <Compile Include="Moteur Graphique\Map\Case.cs" />
+    <Compile Include="Moteur Graphique\Map\Terrain.cs" />
+    <Compile Include="Moteur Graphique\Screens\GameScreen.cs" />
+    <Compile Include="Moteur Graphique\Screens\OpeningScreen.cs" />
+    <Compile Include="Moteur Graphique\MainFiles\ProgramConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Terrain\Case.cs" />
-    <Compile Include="Terrain\CaseDebut.cs" />
-    <Compile Include="Terrain\CaseFin.cs" />
-    <Compile Include="Terrain\Terrain.cs" />
-    <Compile Include="Tour\Projectile.cs" />
-    <Compile Include="Tour\ProjectileCase.cs" />
-    <Compile Include="Tour\ProjectileUnite.cs" />
-    <Compile Include="Tour\Tour.cs" />
-    <Compile Include="Unite\Unite.cs" />
-    <Compile Include="Unite\Vague.cs" />
+    <Compile Include="Architechture\Terrain\Case.cs" />
+    <Compile Include="Architechture\Terrain\CaseDebut.cs" />
+    <Compile Include="Architechture\Terrain\CaseFin.cs" />
+    <Compile Include="Architechture\Terrain\Terrain.cs" />
+    <Compile Include="Architechture\Tour\Projectile.cs" />
+    <Compile Include="Architechture\Tour\ProjectileCase.cs" />
+    <Compile Include="Architechture\Tour\ProjectileUnite.cs" />
+    <Compile Include="Architechture\Tour\Tour.cs" />
+    <Compile Include="Architechture\Unite\Unite.cs" />
+    <Compile Include="Architechture\Unite\Vague.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,9 +108,7 @@
   <ItemGroup>
     <Content Include="TODO.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Moteur Graphique\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
