@@ -18,7 +18,7 @@ namespace MoteurGraphique.MainFiles
         {
             Name = "game";
             // TODO: Complete member initialization
-            Map = new Terrain("Test", 5, 5, 2);
+            Map = new Terrain("Test", 30, 30, 2);
         }
 
         /// <summary>
@@ -29,7 +29,75 @@ namespace MoteurGraphique.MainFiles
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update logic here
+            if (Cam.Position.X < 0)
+            {
+                Cam.OffsetX = 0;
+                Cam.Position = new Vector3(
+                    Cam.OffsetX,
+                    Cam.OffsetY,
+                    Cam.OffsetZ);
+                Cam.LookAt = new Vector3(
+                    Cam.OffsetX,
+                    -10,
+                    Cam.OffsetZ);
+            }
 
+            if (Cam.Position.Y < 64)
+            {
+                Cam.OffsetY = 64;
+                Cam.Position = new Vector3(
+                    Cam.OffsetX,
+                    Cam.OffsetY,
+                    Cam.OffsetZ);
+            }
+
+            if (Cam.Position.Z < 0)
+            {
+                Cam.OffsetZ = 0;
+                Cam.Position = new Vector3(
+                    Cam.OffsetX,
+                    Cam.OffsetY,
+                    Cam.OffsetZ);
+                Cam.LookAt = new Vector3(
+                    Cam.OffsetX,
+                    -10,
+                    Cam.OffsetZ);
+            }
+
+            if (Cam.Position.X > Map.x)
+            {
+                Cam.OffsetX = Map.x;
+                Cam.Position = new Vector3(
+                    Cam.OffsetX,
+                    Cam.OffsetY,
+                    Cam.OffsetZ);
+                Cam.LookAt = new Vector3(
+                    Cam.OffsetX,
+                    -10,
+                    Cam.OffsetZ);
+            }
+
+            if (Cam.Position.Y > 2000)
+            {
+                Cam.OffsetY = 2000;
+                Cam.Position = new Vector3(
+                    Cam.OffsetX,
+                    Cam.OffsetY,
+                    Cam.OffsetZ);
+            }
+
+            if (Cam.Position.Z > Map.y)
+            {
+                Cam.OffsetZ = Map.y;
+                Cam.Position = new Vector3(
+                    Cam.OffsetX,
+                    Cam.OffsetY,
+                    Cam.OffsetZ);
+                Cam.LookAt = new Vector3(
+                    Cam.OffsetX,
+                    -10,
+                    Cam.OffsetZ);
+            }
             base.Update(gameTime);
         }
 

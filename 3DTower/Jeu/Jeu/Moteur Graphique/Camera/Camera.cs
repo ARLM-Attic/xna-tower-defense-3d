@@ -85,6 +85,7 @@ namespace Jeu.Moteur_Graphique.Camera
             view = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(90));
             Position = new Vector3(0, 200, 0.001f);
             LookAt = new Vector3(0, -10, 0);
+            OffsetY = 500;
             base.Initialize();
         }
 
