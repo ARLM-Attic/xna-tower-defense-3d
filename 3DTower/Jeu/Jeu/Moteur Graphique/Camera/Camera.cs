@@ -83,7 +83,7 @@ namespace Jeu.Moteur_Graphique.Camera
                                         near,
                                         far);
             view = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(90));
-            Position = new Vector3(0, 200, 0);
+            Position = new Vector3(0, 200, 0.001f);
             LookAt = new Vector3(0, -10, 0);
             base.Initialize();
         }
@@ -114,7 +114,7 @@ namespace Jeu.Moteur_Graphique.Camera
             if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftControl))
                 OffsetY -= 10;
 
-            Position = new Vector3(OffsetX, OffsetY, OffsetZ);
+            Position = new Vector3(OffsetX, OffsetY, OffsetZ + 0.001f);
             LookAt = new Vector3(OffsetX, -10, OffsetZ);
 
             view =

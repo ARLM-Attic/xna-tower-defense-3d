@@ -14909,7 +14909,7 @@ Objects:  {
             Property: "LastFrame", "int", "",0
             Property: "Width", "int", "",0
             Property: "Height", "int", "",0
-            Property: "Path", "charptr", "", "C:/Documents and Settings/a-mdudl/My Documents/maya/projects/default//textures/spacewars/tga/renamed/wedge_p1_diff_v1.tga"
+            Property: "Path", "charptr", "", "Modeles/wedge_p1_diff_v1.tga"
              
             Property: "StartFrame", "int", "",0
             Property: "StopFrame", "int", "",0

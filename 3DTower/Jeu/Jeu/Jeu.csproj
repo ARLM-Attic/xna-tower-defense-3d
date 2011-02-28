@@ -128,6 +128,7 @@
     <Compile Include="Architechture\Tour\Tour.cs" />
     <Compile Include="Architechture\Unite\Unite.cs" />
     <Compile Include="Architechture\Unite\Vague.cs" />
+    <Compile Include="Moteur Graphique\Camera\Camera.cs" />
     <Compile Include="Moteur Graphique\Components\FPS_GC.cs" />
     <Compile Include="Moteur Graphique\MainFiles\GameMain.cs" />
     <Compile Include="Moteur Graphique\MainFiles\ProgramGraphique.cs" />

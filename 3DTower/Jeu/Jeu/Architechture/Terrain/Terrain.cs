@@ -47,6 +47,7 @@ namespace Jeu
 
                 Carte = new Case[Horizontal, Vertical];
                 this.NomCarte = mapName;
+                initTerrain();
             }
             else
             {

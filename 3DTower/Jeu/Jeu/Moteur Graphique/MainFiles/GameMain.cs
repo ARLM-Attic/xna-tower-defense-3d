@@ -1,5 +1,6 @@
 using GlobalComponents;
 using GUILibrary;
+using Jeu.Moteur_Graphique.Camera;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -24,10 +25,15 @@ namespace MoteurGraphique
             OpeningScreen os = new OpeningScreen(this);
             FPS_GC fps = new FPS_GC(this);
             GameScreen gs = new GameScreen(this);
+            Camera camera = new Camera(this);
+
+            gs.Cam = camera;
 
             ScreenManager.add(os);
             ScreenManager.add(gs);
+
             Components.Add(os);
+            Components.Add(camera);
         }
 
         /// <summary>
@@ -47,8 +53,10 @@ namespace MoteurGraphique
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferHeight = 1024;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferWidth = 1280;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferFormat = SurfaceFormat.Rg32;
-
+            GLOBALS_GAME_RESSOURCES.Initialize();
             //GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
+            Window.Title = "3D Tower";
+            Window.AllowUserResizing = true;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.ApplyChanges();
 
             base.Initialize();
@@ -60,7 +68,6 @@ namespace MoteurGraphique
         /// </summary>
         protected override void LoadContent()
         {
-            GLOBALS_GAME_RESSOURCES.Initialize();
             GLOBALS_GAME_RESSOURCES.Images[0] = Content.Load<Texture2D>("Images/Shiki1");
             GLOBALS_GAME_RESSOURCES.Images[1] = Content.Load<Texture2D>("Images/Shiki2");
             GLOBALS_GAME_RESSOURCES.Images[2] = Content.Load<Texture2D>("Images/Shiki3");
@@ -71,7 +78,10 @@ namespace MoteurGraphique
             GLOBALS_GAME_RESSOURCES.TX_minimap = Content.Load<Texture2D>("Textures/vert_32x32");
 
             //Models
-            GLOBALS_GAME_RESSOURCES.Models[0] = Content.Load<Model>("Modeles/Cube_vert");
+            GLOBALS_GAME_RESSOURCES.Models[0] = Content.Load<Model>("Modeles/CubeVert");
+
+            //Font
+            GLOBALS_GAME_RESSOURCES.Font = Content.Load<SpriteFont>("Font/myfont");
         }
 
         /// <summary>
