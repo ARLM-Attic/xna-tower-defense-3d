@@ -119,7 +119,7 @@ namespace Jeu.Moteur_Graphique.Camera
 
             view =
                 Matrix.CreateLookAt(position, lookAt, Vector3.Up) *
-                Matrix.CreateRotationY(MathHelper.ToRadians(90));
+                Matrix.CreateRotationY(MathHelper.ToRadians(0));
 
             base.Update(gameTime);
         }

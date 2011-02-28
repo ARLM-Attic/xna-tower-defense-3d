@@ -100,12 +100,8 @@ namespace MoteurGraphique.MainFiles
                     effect.TextureEnabled = true;
                     effect.World = transforms[mesh.ParentBone.Index]
                         * Matrix.CreateTranslation(new Vector3(32 * abs, 32 * hauteur, 32 * ord));
-                    effect.View = Matrix.CreateLookAt(new Vector3(0.0f, 500.0f, 0.01f),
-                        Vector3.Zero, Vector3.Up);
-                    effect.Projection = Matrix.CreatePerspectiveFieldOfView(
-                        MathHelper.ToRadians(120.0f),
-                        GLOBALS_GAME_RESSOURCES.GRAPHICS.GraphicsDevice.Viewport.AspectRatio,
-                        1.0f, 7000.0f);
+                    effect.View = Cam.View;
+                    effect.Projection = Cam.ProjectionMatrix;
                 }
 
                 // Draw the mesh, using the effects set above.
