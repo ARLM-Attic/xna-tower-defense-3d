@@ -81,7 +81,7 @@ namespace MoteurGraphique
             GLOBALS_GAME_RESSOURCES.Models[0] = Content.Load<Model>("Modeles/CubeVert");
 
             //Font
-            GLOBALS_GAME_RESSOURCES.Font = Content.Load<SpriteFont>("Font/myfont");
+            //GLOBALS_GAME_RESSOURCES.Font = Content.Load<SpriteFont>("Font/myfont");
         }
 
         /// <summary>
