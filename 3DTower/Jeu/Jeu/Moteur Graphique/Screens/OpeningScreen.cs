@@ -12,6 +12,7 @@ namespace MoteurGraphique
         int numScreen = -1;
         TimeSpan time;
         private GameMain gameMain;
+        int aVoir = 0;
 
         public OpeningScreen(Game game)
             : base(game)
@@ -45,7 +46,7 @@ namespace MoteurGraphique
             }
             else
                 time += gameTime.ElapsedGameTime;
-            if (numScreen >= 3)
+            if (numScreen >= aVoir)
             {
                 GlobalComponents.ScreenManager.disableScreen(Name);
                 GlobalComponents.ScreenManager.activateScreen("game");
@@ -55,11 +56,11 @@ namespace MoteurGraphique
 
         public override void Draw(GameTime gameTime)
         {
-            GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Begin();
-            {
-                GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.Images[numScreen], Vector2.Zero, Color.White);
-            }
-            GLOBALS_GAME_RESSOURCES.SPRITEBATCH.End();
+            //GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Begin();
+            //{
+            //    GLOBALS_GAME_RESSOURCES.SPRITEBATCH.Draw(GLOBALS_GAME_RESSOURCES.Images[numScreen], Vector2.Zero, Color.White);
+            //}
+            //GLOBALS_GAME_RESSOURCES.SPRITEBATCH.End();
 
             base.Draw(gameTime);
         }
