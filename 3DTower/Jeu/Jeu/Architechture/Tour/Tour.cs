@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Jeu
 {
-    partial class Tour
+    partial class Tour : IAction
     {
         public int porte { get; private set; }
 
@@ -48,6 +48,11 @@ namespace Jeu
         public void construire()
         {
             // remplir toute cibles de tout les case comprios dans la porté qui sont (bool) pratiquable
+        }
+
+        public void Action()
+        {
+            Console.WriteLine("Tour en action");
         }
     }
 }

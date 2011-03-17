@@ -9,9 +9,17 @@ namespace MoteurGraphique
         /// </summary>
         static void Main(string[] args)
         {
-            using (GameMain game = new GameMain())
+            bool console = true;
+            if (console)
             {
-                game.Run();
+                new MainMoteur();
+            }
+            else
+            {
+                using (GameMain game = new GameMain())
+                {
+                    game.Run();
+                }
             }
         }
     }

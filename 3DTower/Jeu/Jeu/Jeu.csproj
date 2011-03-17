@@ -112,8 +112,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Architechture\Moteur Calcul\GameTimer.cs" />
+    <Compile Include="Architechture\Moteur Calcul\IAction.cs" />
     <Compile Include="Architechture\Moteur Calcul\Moteur.cs" />
     <Compile Include="Architechture\Moteur Calcul\Position3D.cs" />
+    <Compile Include="Architechture\Moteur Calcul\TimeEvent.cs" />
     <Compile Include="Architechture\Partie\Joueur.cs" />
     <Compile Include="Architechture\Partie\Partie.cs" />
     <Compile Include="Architechture\Partie\Ressource.cs" />
@@ -131,6 +133,7 @@
     <Compile Include="Moteur Graphique\Camera\Camera.cs" />
     <Compile Include="Moteur Graphique\Components\FPS_GC.cs" />
     <Compile Include="Moteur Graphique\MainFiles\GameMain.cs" />
+    <Compile Include="Moteur Graphique\MainFiles\MainMoteur.cs" />
     <Compile Include="Moteur Graphique\MainFiles\ProgramGraphique.cs" />
     <Compile Include="Moteur Graphique\Map\Case.cs" />
     <Compile Include="Moteur Graphique\Map\Terrain.cs" />
