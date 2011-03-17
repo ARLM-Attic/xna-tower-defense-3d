@@ -25,6 +25,8 @@ namespace GlobalComponents
 
         public static Model[] Models { get; private set; }
 
+        public static SpriteFont Font { get; set; }
+
         //Model
 
         public static void Initialize()
@@ -64,7 +66,7 @@ namespace GlobalComponents
             VP_panneauTour.X = VP_viewGame.Width;
 
             Images = new Texture2D[3];
-            Models = new Model[1];
+            Models = new Model[2];
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GlobalComponents;
+using GUILibrary;
 using Jeu;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,6 +12,8 @@ namespace MoteurGraphique.MainFiles
 {
     class GameScreen : Screen
     {
+        Menu Menu { get; set; }
+
         Terrain Map { get; set; }
 
         public GameScreen(Game game)
@@ -18,7 +21,7 @@ namespace MoteurGraphique.MainFiles
         {
             Name = "game";
             // TODO: Complete member initialization
-            Map = new Terrain("Test", 30, 30, 2);
+            Map = new Terrain("Test", 5, 5, 3);
         }
 
         /// <summary>

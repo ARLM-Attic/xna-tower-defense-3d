@@ -31,11 +31,11 @@ namespace Jeu.Moteur_Graphique.Camera
 
         public float OffsetZ { get; set; }
 
-        public float RotatioX { get; set; }
+        public float RotationX { get; set; }
 
-        public float RotatioY { get; set; }
+        public float RotationY { get; set; }
 
-        public float RotatioZ { get; set; }
+        public float RotationZ { get; set; }
 
         public Camera(Game game)
             : base(game)
@@ -84,6 +84,7 @@ namespace Jeu.Moteur_Graphique.Camera
                                         far);
             view = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(90));
             Position = new Vector3(0, 200, 0.001f);
+
             LookAt = new Vector3(0, -10, 0);
             OffsetY = 500;
             base.Initialize();
@@ -115,12 +116,21 @@ namespace Jeu.Moteur_Graphique.Camera
             if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftControl))
                 OffsetY -= 10;
 
+            if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftAlt))
+                RotationX += 2;
+
+            if (kstate.IsKeyDown(Keys.Up) && kstate.IsKeyDown(Keys.LeftAlt))
+                RotationX -= 2;
+
             Position = new Vector3(OffsetX, OffsetY, OffsetZ + 0.001f);
             LookAt = new Vector3(OffsetX, -10, OffsetZ);
+            Matrix rotation = Matrix.CreateRotationX(MathHelper.ToRadians(RotationX)) *
+                                Matrix.CreateRotationY(MathHelper.ToRadians(RotationY)) *
+                                Matrix.CreateRotationZ(MathHelper.ToRadians(RotationZ));
+            Vector3 transformed = Vector3.Transform(lookAt, rotation);
 
             view =
-                Matrix.CreateLookAt(position, lookAt, Vector3.Up) *
-                Matrix.CreateRotationY(MathHelper.ToRadians(0));
+                Matrix.CreateLookAt(position, lookAt, Vector3.Up);
 
             base.Update(gameTime);
         }

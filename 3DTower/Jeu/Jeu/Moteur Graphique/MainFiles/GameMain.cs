@@ -68,9 +68,9 @@ namespace MoteurGraphique
         /// </summary>
         protected override void LoadContent()
         {
-            GLOBALS_GAME_RESSOURCES.Images[0] = Content.Load<Texture2D>("Images/Shiki1");
-            GLOBALS_GAME_RESSOURCES.Images[1] = Content.Load<Texture2D>("Images/Shiki2");
-            GLOBALS_GAME_RESSOURCES.Images[2] = Content.Load<Texture2D>("Images/Shiki3");
+            //GLOBALS_GAME_RESSOURCES.Images[0] = Content.Load<Texture2D>("Images/Shiki1");
+            //GLOBALS_GAME_RESSOURCES.Images[1] = Content.Load<Texture2D>("Images/Shiki2");
+            //GLOBALS_GAME_RESSOURCES.Images[2] = Content.Load<Texture2D>("Images/Shiki3");
 
             //Texture
             GLOBALS_GAME_RESSOURCES.TX_panneauStatut = Content.Load<Texture2D>("Textures/planet-001");
@@ -79,6 +79,7 @@ namespace MoteurGraphique
 
             //Models
             GLOBALS_GAME_RESSOURCES.Models[0] = Content.Load<Model>("Modeles/CubeVert");
+            GLOBALS_GAME_RESSOURCES.Models[1] = Content.Load<Model>("Modeles/Tour");
 
             //Font
             //GLOBALS_GAME_RESSOURCES.Font = Content.Load<SpriteFont>("Font/myfont");
