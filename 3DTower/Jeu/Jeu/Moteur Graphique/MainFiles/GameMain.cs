@@ -24,8 +24,8 @@ namespace MoteurGraphique
             //Component
             OpeningScreen os = new OpeningScreen(this);
             FPS_GC fps = new FPS_GC(this);
-            GameScreen gs = new GameScreen(this);
             Camera camera = new Camera(this);
+            GameScreen gs = new GameScreen(this);
 
             gs.Cam = camera;
 
@@ -50,13 +50,18 @@ namespace MoteurGraphique
             IsMouseVisible = true;
 
             //Initialisation des parametre de la fenetre
-            GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferHeight = 1024;
-            GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferWidth = 1280;
+            GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
+            GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+            GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
             GLOBALS_GAME_RESSOURCES.GRAPHICS.PreferredBackBufferFormat = SurfaceFormat.Rg32;
+
+            GraphicsDevice.Viewport = new Viewport(0, 0, Window.ClientBounds.Width, Window.ClientBounds.Height);
+
             GLOBALS_GAME_RESSOURCES.Initialize();
-            //GLOBALS_GAME_RESSOURCES.GRAPHICS.ToggleFullScreen();
+
             Window.Title = "3D Tower";
             Window.AllowUserResizing = true;
+            //GraphicsDevice.Viewport = new Viewport(Window.ClientBounds);
             GLOBALS_GAME_RESSOURCES.GRAPHICS.ApplyChanges();
 
             base.Initialize();

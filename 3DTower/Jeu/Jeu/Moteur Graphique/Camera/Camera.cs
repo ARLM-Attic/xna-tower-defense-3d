@@ -17,53 +17,50 @@ namespace Jeu.Moteur_Graphique.Camera
     /// </summary>
     public class Camera : Microsoft.Xna.Framework.GameComponent
     {
-        private Vector3 position;
-        private Quaternion rotation;
-        private Vector3 regarde;
-        private Matrix view;
-        private Matrix projection;
-        private float aspectRatio;
-        private float near;
-        private float far;
+        public Vector3 CameraInitPosition;
+        public Vector3 CameraPosition;
 
-        public float OffsetX { get; set; }
+        public Vector3 CameraInitLookAt;
+        public Vector3 CameraLookAt;
 
-        public float OffsetY { get; set; }
+        public Matrix ViewMatrix;
 
-        public float OffsetZ { get; set; }
+        public Matrix ProjectionMatrix;
 
-        public float RotationX { get; set; }
+        Quaternion CameraRotation;
 
-        public float RotationY { get; set; }
+        public float OffSetZ;
 
-        public float RotationZ { get; set; }
+        public float OffSetY;
+
+        public float OffSetX;
+
+        private Vector3 CameraUpVector;
+        private float Near;
+        private int Far;
+        private int AspectRatio;
+
+        public Vector3 Dimension;
 
         public Camera(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
-        }
+            CameraInitPosition = CameraPosition = new Vector3(0, 200, 0.0001f);
+            CameraInitLookAt = CameraLookAt = new Vector3(0, -10, 0);
+            ViewMatrix = Matrix.Identity;
+            ProjectionMatrix = Matrix.Identity;
+            CameraRotation = Quaternion.Identity;
 
-        public Vector3 Position
-        {
-            get { return position; }
-            set { position = value; }
-        }
+            OffSetX = 0;
+            OffSetY = 0;
+            OffSetZ = 0;
 
-        public Vector3 LookAt
-        {
-            get { return regarde; }
-            set { regarde = value; }
-        }
+            CameraUpVector = Vector3.Up;
 
-        public Matrix View
-        {
-            get { return view; }
-        }
+            Near = 1.0F;
+            Far = 2000;
 
-        public Matrix ProjectionMatrix
-        {
-            get { return projection; }
+            Dimension = Vector3.Zero;
         }
 
         /// <summary>
@@ -73,21 +70,9 @@ namespace Jeu.Moteur_Graphique.Camera
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            near = 1.0F;
-            far = 2000;
-            aspectRatio =
+            AspectRatio =
                 GLOBALS_GAME_RESSOURCES.VP_viewGame.Width /
                 GLOBALS_GAME_RESSOURCES.VP_viewGame.Height;
-            projection = Matrix.CreatePerspectiveFieldOfView(
-                                        MathHelper.ToRadians(45.0f),
-                                        aspectRatio,
-                                        near,
-                                        far);
-            view = Matrix.Identity;// *Matrix.CreateRotationY(MathHelper.ToRadians(90));
-            Position = new Vector3(0, 200, 0.001f);
-            rotation = Quaternion.Identity;
-            LookAt = new Vector3(0, -10, 0);
-            OffsetY = 500;
             base.Initialize();
         }
 
@@ -100,47 +85,69 @@ namespace Jeu.Moteur_Graphique.Camera
             //Recuperation du clavier
             KeyboardState kstate = Keyboard.GetState();
             if (kstate.IsKeyDown(Keys.Left))
-                OffsetX -= 10;
+            {
+                OffSetX -= 10;
+                if (OffSetX < 0)
+                    OffSetX = 0;
+            }
 
             if (kstate.IsKeyDown(Keys.Right))
-                OffsetX += 10;
+            {
+                OffSetX += 10;
+                if (OffSetX > Dimension.X)
+                    OffSetX = Dimension.X;
+            }
 
             if (kstate.IsKeyDown(Keys.Down) && !kstate.IsKeyDown(Keys.LeftControl))
-                OffsetZ -= 10;
+            {
+                OffSetZ -= 10;
+                if (OffSetZ < 0)
+                    OffSetZ = 0;
+            }
 
             if (kstate.IsKeyDown(Keys.Up) && !kstate.IsKeyDown(Keys.LeftControl))
-                OffsetZ += 10;
+            {
+                OffSetZ += 10;
+                if (OffSetZ > Dimension.Y)
+                    OffSetZ = Dimension.Y;
+            }
 
             if (kstate.IsKeyDown(Keys.Up) && kstate.IsKeyDown(Keys.LeftControl))
-                OffsetY += 10;
+            {
+                OffSetY += 10;
+                if (OffSetY > 1800)
+                    OffSetY = 1800;
+            }
 
             if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftControl))
-                OffsetY -= 10;
-
-            if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftAlt))
+            {
+                OffSetY -= 10;
+                if (OffSetY < Dimension.Z)
+                    OffSetY = Dimension.Z;
+            }
+            /*if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftAlt))
                 RotationX += 2;
 
             if (kstate.IsKeyDown(Keys.Up) && kstate.IsKeyDown(Keys.LeftAlt))
-                RotationX -= 2;
+                RotationX -= 2;*/
 
             ///////////////////////////////////////////////////////////////////
 
             //Calcule des matrices
 
-            Position = new Vector3(OffsetX, OffsetY, OffsetZ + 0.001f);
-            LookAt = new Vector3(OffsetX, -10, OffsetZ);
-            Matrix rotation = Matrix.CreateRotationX(MathHelper.ToRadians(RotationX)) *
-                                Matrix.CreateRotationY(MathHelper.ToRadians(RotationY)) *
-                                Matrix.CreateRotationZ(MathHelper.ToRadians(RotationZ));
-            Position = Vector3.Transform(Position, rotation);
-            /*Matrix rotationCameraPosition = Matrix.CreateRotationX(MathHelper.ToRadians(-RotationX)) *
-                                            Matrix.CreateRotationY(MathHelper.ToRadians(-RotationY)) *
-                                            Matrix.CreateRotationZ(MathHelper.ToRadians(-RotationZ));*/
-            // Vector3 PositionTransformed = Vector3.Transform(Position, rotationCameraPosition);
-            Vector3 LookAtTransformed = Vector3.Transform(LookAt, rotation);
-            //view =
-            //    Matrix.CreateLookAt(position, LookAt, Vector3.Up);
-            //Matrix.CreateLookAt(PositionTransformed, LookAtTransformed, Vector3.Up);
+            CameraPosition = Vector3.Transform(CameraInitPosition, Matrix.CreateFromQuaternion(CameraRotation));
+
+            CameraPosition += new Vector3(OffSetX, OffSetY, OffSetZ);
+
+            CameraLookAt = Vector3.Transform(CameraInitLookAt, Matrix.CreateFromQuaternion(CameraRotation));
+
+            CameraLookAt += new Vector3(OffSetX, 0, OffSetZ);
+
+            CameraUpVector = Vector3.Transform(CameraUpVector, Matrix.CreateFromQuaternion(CameraRotation));
+
+            ViewMatrix = Matrix.CreateLookAt(CameraPosition, CameraLookAt, CameraUpVector);
+
+            ProjectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, AspectRatio, Near, Far);
             base.Update(gameTime);
         }
     }

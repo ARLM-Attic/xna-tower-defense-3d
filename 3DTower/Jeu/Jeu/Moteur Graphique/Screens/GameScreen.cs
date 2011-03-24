@@ -12,11 +12,29 @@ namespace MoteurGraphique.MainFiles
 {
     class GameScreen : Screen
     {
+        public Jeu.Moteur_Graphique.Camera.Camera cam;
+
+        public Jeu.Moteur_Graphique.Camera.Camera Cam
+        {
+            get
+            {
+                return cam;
+            }
+            set
+            {
+                cam = value;
+                cam.Dimension = new Vector3(Map.x * Map.Horizontal,
+                                        Map.y * Map.Vertical,
+                                        Map.z * Map.Profondeur);
+            }
+        }
+
         Menu Menu { get; set; }
 
         Terrain Map { get; set; }
 
         public GameScreen(Game game)
+
             : base(game)
         {
             Name = "game";
@@ -32,74 +50,74 @@ namespace MoteurGraphique.MainFiles
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update logic here
-            if (Cam.Position.X < 0)
+            if (Cam.CameraPosition.X < 0)
             {
-                Cam.OffsetX = 0;
-                Cam.Position = new Vector3(
-                    Cam.OffsetX,
-                    Cam.OffsetY,
-                    Cam.OffsetZ);
-                Cam.LookAt = new Vector3(
-                    Cam.OffsetX,
+                Cam.OffSetX = 0;
+                Cam.CameraPosition = new Vector3(
+                    Cam.OffSetX,
+                    Cam.OffSetY,
+                    Cam.OffSetZ);
+                Cam.CameraLookAt = new Vector3(
+                    Cam.OffSetX,
                     -10,
-                    Cam.OffsetZ);
+                    Cam.OffSetZ);
             }
 
-            if (Cam.Position.Y < 64)
+            if (Cam.CameraPosition.Y < 64)
             {
-                Cam.OffsetY = 64;
-                Cam.Position = new Vector3(
-                    Cam.OffsetX,
-                    Cam.OffsetY,
-                    Cam.OffsetZ);
+                Cam.OffSetY = 64;
+                Cam.CameraPosition = new Vector3(
+                    Cam.OffSetX,
+                    Cam.OffSetY,
+                    Cam.OffSetZ);
             }
 
-            if (Cam.Position.Z < 0)
+            if (Cam.CameraPosition.Z < 0)
             {
-                Cam.OffsetZ = 0;
-                Cam.Position = new Vector3(
-                    Cam.OffsetX,
-                    Cam.OffsetY,
-                    Cam.OffsetZ);
-                Cam.LookAt = new Vector3(
-                    Cam.OffsetX,
+                Cam.OffSetZ = 0;
+                Cam.CameraPosition = new Vector3(
+                    Cam.OffSetX,
+                    Cam.OffSetY,
+                    Cam.OffSetZ);
+                Cam.CameraLookAt = new Vector3(
+                    Cam.OffSetX,
                     -10,
-                    Cam.OffsetZ);
+                    Cam.OffSetZ);
             }
 
-            if (Cam.Position.X > Map.x)
+            if (Cam.CameraPosition.X > Map.x)
             {
-                Cam.OffsetX = Map.x;
-                Cam.Position = new Vector3(
-                    Cam.OffsetX,
-                    Cam.OffsetY,
-                    Cam.OffsetZ);
-                Cam.LookAt = new Vector3(
-                    Cam.OffsetX,
+                Cam.OffSetX = Map.x;
+                Cam.CameraPosition = new Vector3(
+                    Cam.OffSetX,
+                    Cam.OffSetY,
+                    Cam.OffSetZ);
+                Cam.CameraLookAt = new Vector3(
+                    Cam.OffSetX,
                     -10,
-                    Cam.OffsetZ);
+                    Cam.OffSetZ);
             }
 
-            if (Cam.Position.Y > 2000)
+            if (Cam.CameraPosition.Y > 1800)
             {
-                Cam.OffsetY = 2000;
-                Cam.Position = new Vector3(
-                    Cam.OffsetX,
-                    Cam.OffsetY,
-                    Cam.OffsetZ);
+                Cam.OffSetY = 1800;
+                Cam.CameraPosition = new Vector3(
+                    Cam.OffSetX,
+                    Cam.OffSetY,
+                    Cam.OffSetZ);
             }
 
-            if (Cam.Position.Z > Map.y)
+            if (Cam.CameraPosition.Z > Map.y)
             {
-                Cam.OffsetZ = Map.y;
-                Cam.Position = new Vector3(
-                    Cam.OffsetX,
-                    Cam.OffsetY,
-                    Cam.OffsetZ);
-                Cam.LookAt = new Vector3(
-                    Cam.OffsetX,
+                Cam.OffSetZ = Map.y;
+                Cam.CameraPosition = new Vector3(
+                    Cam.OffSetX,
+                    Cam.OffSetY,
+                    Cam.OffSetZ);
+                Cam.CameraLookAt = new Vector3(
+                    Cam.OffSetX,
                     -10,
-                    Cam.OffsetZ);
+                    Cam.OffSetZ);
             }
             base.Update(gameTime);
         }
@@ -171,7 +189,7 @@ namespace MoteurGraphique.MainFiles
                     effect.TextureEnabled = true;
                     effect.World = transforms[mesh.ParentBone.Index]
                         * Matrix.CreateTranslation(new Vector3(32 * abs, 32 * hauteur, 32 * ord));
-                    effect.View = Cam.View;
+                    effect.View = Cam.ViewMatrix;
                     effect.Projection = Cam.ProjectionMatrix;
                 }
 
@@ -179,7 +197,5 @@ namespace MoteurGraphique.MainFiles
                 mesh.Draw();
             }
         }
-
-        public Jeu.Moteur_Graphique.Camera.Camera Cam { get; set; }
     }
 }

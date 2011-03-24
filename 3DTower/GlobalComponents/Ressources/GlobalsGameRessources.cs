@@ -36,8 +36,6 @@ namespace GlobalComponents
 
             //Viewports
             VP_defaultViewPort = GRAPHICS.GraphicsDevice.Viewport;
-            VP_defaultViewPort.Width = 1280;
-            VP_defaultViewPort.Height = 1024;
 
             VP_viewGame = VP_defaultViewPort;
             VP_panneauStatut = VP_defaultViewPort;
