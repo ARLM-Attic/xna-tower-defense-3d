@@ -13,6 +13,10 @@ namespace MoteurGraphique
     /// </summary>
     public class GameMain : Microsoft.Xna.Framework.Game
     {
+        Menu gameMenu;
+        Bouton b_arrowTower;
+        Bouton b_slowTower;
+
         public GameMain()
         {
             GLOBALS_GAME_RESSOURCES.GRAPHICS = new GraphicsDeviceManager(this);
@@ -34,6 +38,16 @@ namespace MoteurGraphique
 
             Components.Add(os);
             Components.Add(camera);
+
+            //Menu
+            gameMenu = new Menu(this);
+
+            b_arrowTower = new Bouton(this);
+            b_slowTower = new Bouton(this);
+
+            Components.Add(gameMenu);
+            Components.Add(b_arrowTower);
+            Components.Add(b_slowTower);
         }
 
         /// <summary>
@@ -73,8 +87,8 @@ namespace MoteurGraphique
         /// </summary>
         protected override void LoadContent()
         {
-            //GLOBALS_GAME_RESSOURCES.Images[0] = Content.Load<Texture2D>("Images/Shiki1");
-            //GLOBALS_GAME_RESSOURCES.Images[1] = Content.Load<Texture2D>("Images/Shiki2");
+            GLOBALS_GAME_RESSOURCES.Images[0] = Content.Load<Texture2D>("Images/b_arrow");
+            GLOBALS_GAME_RESSOURCES.Images[1] = Content.Load<Texture2D>("Images/b_glacon");
             //GLOBALS_GAME_RESSOURCES.Images[2] = Content.Load<Texture2D>("Images/Shiki3");
 
             //Texture
@@ -88,6 +102,13 @@ namespace MoteurGraphique
 
             //Font
             //GLOBALS_GAME_RESSOURCES.Font = Content.Load<SpriteFont>("Font/myfont");
+
+            //Boutons
+            gameMenu.Use(GLOBALS_GAME_RESSOURCES.SPRITEBATCH, GLOBALS_GAME_RESSOURCES.VP_panneauTour, 10, 10);
+            b_arrowTower.Texture = GLOBALS_GAME_RESSOURCES.Images[0];
+            b_slowTower.Texture = GLOBALS_GAME_RESSOURCES.Images[1];
+            gameMenu.add(b_arrowTower);
+            gameMenu.add(b_slowTower);
         }
 
         /// <summary>

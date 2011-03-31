@@ -7,12 +7,14 @@ using GUILibrary;
 using Jeu;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace MoteurGraphique.MainFiles
 {
     class GameScreen : Screen
     {
         public Jeu.Moteur_Graphique.Camera.Camera cam;
+        private KeyboardState ks;
 
         public Jeu.Moteur_Graphique.Camera.Camera Cam
         {
@@ -119,7 +121,20 @@ namespace MoteurGraphique.MainFiles
                     -10,
                     Cam.OffSetZ);
             }
+
+            ks = Keyboard.GetState();
+
+            /*if (ks.IsKeyDown(Keys.Space))
+            {
+                placeTour();
+            }*/
+
             base.Update(gameTime);
+        }
+
+        private void placeTour()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -167,6 +182,8 @@ namespace MoteurGraphique.MainFiles
                 drawCube(c.X, c.Y, c.Z);
             }
 
+            //drawMenu();
+
             base.Draw(gameTime);
         }
 
@@ -176,6 +193,8 @@ namespace MoteurGraphique.MainFiles
             Matrix[] transforms = new Matrix[GLOBALS_GAME_RESSOURCES.Models[0].Bones.Count];
             GLOBALS_GAME_RESSOURCES.Models[0].CopyBoneTransformsTo(transforms);
             //mo_sship.CopyAbsoluteBoneTransformsTo(transforms);
+
+            Matrix worldMatrix = Cam.World;
 
             //// Draw the model. A model can have multiple meshes, so loop.
             foreach (ModelMesh mesh in GLOBALS_GAME_RESSOURCES.Models[0].Meshes)

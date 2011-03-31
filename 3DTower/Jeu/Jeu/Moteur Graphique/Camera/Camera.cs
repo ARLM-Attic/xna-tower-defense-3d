@@ -27,7 +27,7 @@ namespace Jeu.Moteur_Graphique.Camera
 
         public Matrix ProjectionMatrix;
 
-        Quaternion CameraRotation;
+        Matrix CameraRotation;
 
         public float OffSetZ;
 
@@ -41,6 +41,10 @@ namespace Jeu.Moteur_Graphique.Camera
         private int AspectRatio;
 
         public Vector3 Dimension;
+        public Matrix World;
+        private int RotationX;
+        private int RotationY;
+        private int RotationZ;
 
         public Camera(Game game)
             : base(game)
@@ -49,11 +53,15 @@ namespace Jeu.Moteur_Graphique.Camera
             CameraInitLookAt = CameraLookAt = new Vector3(0, -10, 0);
             ViewMatrix = Matrix.Identity;
             ProjectionMatrix = Matrix.Identity;
-            CameraRotation = Quaternion.Identity;
+            CameraRotation = Matrix.Identity;
 
             OffSetX = 0;
             OffSetY = 0;
             OffSetZ = 0;
+
+            RotationX = 0;
+            RotationY = 0;
+            RotationZ = 0;
 
             CameraUpVector = Vector3.Up;
 
@@ -84,31 +92,31 @@ namespace Jeu.Moteur_Graphique.Camera
         {
             //Recuperation du clavier
             KeyboardState kstate = Keyboard.GetState();
-            if (kstate.IsKeyDown(Keys.Left))
+            if (kstate.IsKeyDown(Keys.Left) && !kstate.IsKeyDown(Keys.LeftAlt))
             {
                 OffSetX -= 10;
-                if (OffSetX < 0)
+                if (OffSetX <= 0)
                     OffSetX = 0;
             }
 
-            if (kstate.IsKeyDown(Keys.Right))
+            if (kstate.IsKeyDown(Keys.Right) && !kstate.IsKeyDown(Keys.LeftAlt))
             {
                 OffSetX += 10;
-                if (OffSetX > Dimension.X)
+                if (OffSetX >= Dimension.X)
                     OffSetX = Dimension.X;
             }
 
             if (kstate.IsKeyDown(Keys.Down) && !kstate.IsKeyDown(Keys.LeftControl))
             {
                 OffSetZ -= 10;
-                if (OffSetZ < 0)
+                if (OffSetZ <= 0)
                     OffSetZ = 0;
             }
 
             if (kstate.IsKeyDown(Keys.Up) && !kstate.IsKeyDown(Keys.LeftControl))
             {
                 OffSetZ += 10;
-                if (OffSetZ > Dimension.Y)
+                if (OffSetZ >= Dimension.Y)
                     OffSetZ = Dimension.Y;
             }
 
@@ -122,28 +130,29 @@ namespace Jeu.Moteur_Graphique.Camera
             if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftControl))
             {
                 OffSetY -= 10;
-                if (OffSetY < Dimension.Z)
+                if (OffSetY <= Dimension.Z)
                     OffSetY = Dimension.Z;
             }
-            /*if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftAlt))
+            if (kstate.IsKeyDown(Keys.Down) && kstate.IsKeyDown(Keys.LeftAlt))
                 RotationX += 2;
 
             if (kstate.IsKeyDown(Keys.Up) && kstate.IsKeyDown(Keys.LeftAlt))
-                RotationX -= 2;*/
+                RotationX -= 2;
 
             ///////////////////////////////////////////////////////////////////
 
             //Calcule des matrices
+            CameraRotation = Matrix.CreateRotationX(MathHelper.ToRadians(RotationX));
 
-            CameraPosition = Vector3.Transform(CameraInitPosition, Matrix.CreateFromQuaternion(CameraRotation));
+            CameraPosition = Vector3.Transform(CameraInitPosition, CameraRotation);
 
             CameraPosition += new Vector3(OffSetX, OffSetY, OffSetZ);
 
-            CameraLookAt = Vector3.Transform(CameraInitLookAt, Matrix.CreateFromQuaternion(CameraRotation));
+            CameraLookAt = Vector3.Transform(CameraInitLookAt, CameraRotation);
 
             CameraLookAt += new Vector3(OffSetX, 0, OffSetZ);
 
-            CameraUpVector = Vector3.Transform(CameraUpVector, Matrix.CreateFromQuaternion(CameraRotation));
+            CameraUpVector = Vector3.Transform(CameraUpVector, CameraRotation);
 
             ViewMatrix = Matrix.CreateLookAt(CameraPosition, CameraLookAt, CameraUpVector);
 

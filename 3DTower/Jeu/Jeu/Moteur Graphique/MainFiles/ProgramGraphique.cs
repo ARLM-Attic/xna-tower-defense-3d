@@ -9,7 +9,7 @@ namespace MoteurGraphique
         /// </summary>
         static void Main(string[] args)
         {
-            bool console = true;
+            bool console = false;
             if (console)
             {
                 new MainMoteur();

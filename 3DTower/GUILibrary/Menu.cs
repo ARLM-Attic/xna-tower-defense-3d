@@ -52,6 +52,8 @@ namespace GUILibrary
             : base(game)
         {
             // TODO: Construct any child components here
+            boutons = new List<Bouton>();
+            LeftDown = false;
         }
 
         public void Use(SpriteBatch sb, Viewport vp, int x, int y)
@@ -69,8 +71,6 @@ namespace GUILibrary
         public override void Initialize()
         {
             // TODO: Add your initialization code here
-            boutons = new List<Bouton>();
-            LeftDown = false;
 
             base.Initialize();
         }
@@ -163,7 +163,7 @@ namespace GUILibrary
                 SpriteBatch.End();
             }
             spriteBatch.Begin();
-            SpriteBatch.DrawString(boutons[0].Font, texte, new Vector2(100, 100), Color.OrangeRed);
+            //SpriteBatch.DrawString(boutons[0].Font, texte, new Vector2(100, 100), Color.OrangeRed);
             SpriteBatch.End();
             base.Draw(gameTime);
         }
